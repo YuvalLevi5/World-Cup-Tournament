@@ -58,6 +58,7 @@ const Personal = () => {
   const handleBet = (bet, index) => {
     try {
       currentUser.results[index] = bet
+      console.log(currentUser._id)
       toast.success('Your bet is set',toastOptions )
     } catch(err) {
 
