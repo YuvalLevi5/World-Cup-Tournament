@@ -15,9 +15,9 @@ const MyBets = () => {
       name: 'QATvECU',
       teamOne: 'QAT',
       teamTwo: 'ECU',
-      winner: 'QAT',
-      teamOneGoals: 2,
-      teamTwoGoals: 1,
+      winner: 'drew',
+      teamOneGoals: 0,
+      teamTwoGoals: 0,
     },
     {
       date: '2022-11-20',
@@ -56,21 +56,24 @@ const MyBets = () => {
       let addToScore = 0
       for (var i = 0; i < games.length; i++) {
         if (games[i].winner) {
-          if (games[i].winner === scoreUser?.results[i].winner) {
-            addToScore += 2
-            if (games[i].winner.teamOneGoals === scoreUser?.results[i].teamOneGoals && games[i].winner.teamTwoGoals === scoreUser?.results[i].teamTwoGoals) {
-              addToScore += 1
+          if (scoreUser?.results[i].isChecked === false) {
+            scoreUser.results[i].isChecked = true
+            if (games[i].winner === scoreUser?.results[i].winner) {
+              addToScore += 2
+              if (games[i].winner.teamOneGoals === scoreUser.results[i].teamOneGoals && games[i].winner.teamTwoGoals === scoreUser.results[i].teamTwoGoals) {
+                addToScore += 1
+              }
             }
           }
         }
       }
+      // צריך לפתור את עניין התוצאה מדויקת ולשמור לדאטה בייס
       scoreUser.score += addToScore
-      console.log(scoreUser)
       // setscoreUser(scoreUser)
       setCurrentUser(scoreUser)
     }
 
-     setScore()
+    setScore()
   }, [])
 
 

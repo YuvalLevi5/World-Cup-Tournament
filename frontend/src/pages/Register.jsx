@@ -27,8 +27,6 @@ const Register = () => {
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values
-    console.log(password)
-    console.log(confirmPassword)
     if (password !== confirmPassword) {
       toast.error("Password and confirm password should be the same", toastOptions)
       return false
@@ -48,7 +46,6 @@ const Register = () => {
     if (handleValidation()) {
       const { password, username } = values
       const data = await worldCupService.register(username, password)
-      console.log(data)
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
