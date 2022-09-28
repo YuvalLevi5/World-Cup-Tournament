@@ -3,6 +3,7 @@ import { json, useNavigate } from 'react-router-dom';
 import Game from '../components/Game';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { worldCupService } from '../services/world-cup-service'
 
 const Personal = () => {
   const navigate = useNavigate()
@@ -36,7 +37,7 @@ const Personal = () => {
     pauseOnHover: true,
     draggable: true,
     theme: "dark",
-}
+  }
 
   useEffect(() => {
     async function check() {
@@ -55,13 +56,14 @@ const Personal = () => {
   yourDate.getHours()
 
 
-  const handleBet = (bet, index) => {
+  const handleBet = async (bet, index) => {
     try {
       currentUser.results[index] = bet
-      console.log(currentUser._id)
-      toast.success('Your bet is set',toastOptions )
-    } catch(err) {
-
+      const data = await worldCupService.updateUser(currentUser)
+      console.log(data)
+      toast.success('Your bet is set', toastOptions)
+    } catch (err) {
+      console.log(err)
     }
   }
 
