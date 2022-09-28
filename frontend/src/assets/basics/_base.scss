@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto-Regular', sans-serif;
+}
+
+html {
+    font-size: 14px;
+    background-color: #fafafa;
+
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.0892857143em;
+    font-family: 'Roboto-Medium', sans-serif;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+

@@ -3,6 +3,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
+import soccerPlater from '../assets/imgs/soccer-player.svg'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -60,25 +61,29 @@ const Login = () => {
     return (
         <>
             <section className='form-container'>
-                <form action="" onSubmit={(event) => handleSubmit(event)}>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        name="username"
-                        onChange={(e) => handleChange(e)}
-                        min="3"
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        onChange={(e) => handleChange(e)}
-                    />
-                    <button type="submit">Log In</button>
-                    <span>
-                        Don't have an account ? <NavLink to="/register">Create One.</NavLink>
-                    </span>
-                </form>
+                <div className="bla">
+
+                    <form className="login-form" action="" onSubmit={(event) => handleSubmit(event)}>
+                        <h2>FIFA World Cup Qatar 2022</h2>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            name="username"
+                            onChange={(e) => handleChange(e)}
+                            min="3"
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            onChange={(e) => handleChange(e)}
+                        />
+                        <button type="submit" className="btn">Login</button>
+                        <span className="btn register">
+                            <NavLink to="/register"> Don't have an account ? Create One</NavLink>
+                        </span>
+                    </form>
+                </div>
             </section>
             <ToastContainer />
         </>

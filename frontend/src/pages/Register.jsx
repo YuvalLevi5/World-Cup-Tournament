@@ -65,12 +65,13 @@ const Register = () => {
   return (
     <>
       <section className='form-container'>
-        <form onSubmit={(event) => handleSubmit(event)}>
+        <form className="login-form" onSubmit={(event) => handleSubmit(event)}>
+          <h2>FIFA World Cup Qatar 2022</h2>
           <input type="text" placeholder='Username' name='username' onChange={(event) => handleChange(event)} />
           <input type="password" placeholder='Password' name='password' onChange={(event) => handleChange(event)} />
           <input type="password" placeholder='Confirm Password' name='confirmPassword' onChange={(event) => handleChange(event)} />
-          <button type='submit'>Create User</button>
-          <span>Already have an account? <NavLink to='/login'>Login</NavLink>  </span>
+          <button className="btn" type='submit'>Create User</button>
+          <span className='btn register'><NavLink to='/login'>Already have an account? Login</NavLink>  </span>
         </form>
       </section>
       <ToastContainer />

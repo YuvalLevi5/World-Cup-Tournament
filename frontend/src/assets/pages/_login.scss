@@ -1,0 +1,66 @@
+.form-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    background: url('imgs/stadium.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border: 2px solid #a1a1aa;
+        border-radius: 5px;
+        padding-block: 1rem;
+        padding-inline: 2rem;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #52152f;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            line-height: 1.5;
+            border: 2px solid #a1a1aa;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            margin-bottom: 1rem;
+
+            &:focus {
+                border-color: #60a5fa;
+                outline: 0;
+                box-shadow: 0 0 0.25rem #0d6efd40;
+            }
+        }
+
+        button {
+            background: #3b82f6;
+            color: #fff;
+            width: 50%;
+            margin: auto;
+            margin-bottom: 1rem;
+        }
+
+        .register {
+            background: none;
+            margin-block: 0.5rem;
+            text-decoration: none;
+
+            a {
+                text-decoration: none
+            }
+        }
+    }
+}
