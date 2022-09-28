@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { worldCupService } from '../services/world-cup-service'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -40,6 +40,21 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const { username, password } = values
+        if (validateForm()) {
+            const data = await worldCupService.login(username, password)
+            if (data.status === false) {
+                toast.error(data.msg, toastOptions);
+            }
+            if (data.status === true) {
+                localStorage.setItem(
+                    'worldcup-app-user',
+                    JSON.stringify(data.user)
+                );
+
+                navigate("/");
+            }
+        }
     }
 
     return (
