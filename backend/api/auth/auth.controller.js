@@ -14,7 +14,9 @@ module.exports.register = async (req, res, next) => {
         const hashedPassword = await bcrypt.hash(password, 10)
         const user = await collection.insertOne({
             username,
-            password: hashedPassword
+            password: hashedPassword,
+            score: 0,
+            results: []
         })
         delete user.password
         console.log('login success')
