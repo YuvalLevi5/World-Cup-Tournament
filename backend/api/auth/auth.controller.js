@@ -19,8 +19,9 @@ module.exports.register = async (req, res, next) => {
             results: []
         })
         delete user.password
+        const sendUser = await collection.findOne({ username: username })
         console.log('login success')
-        return res.json({ status: true, user })
+        return res.json({ status: true, user: sendUser })
     } catch (error) {
         next(ex)
     }

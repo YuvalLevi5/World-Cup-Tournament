@@ -21,7 +21,8 @@ const Game = ({ game, index, handleBet }) => {
         const userGameBet = {
             winner: winner,
             teamOneGoals: game.teamOneGoals,
-            teamTwoGoals: game.teamTwoGoals
+            teamTwoGoals: game.teamTwoGoals,
+            isChecked: false
         }
 
         handleBet(userGameBet, index)

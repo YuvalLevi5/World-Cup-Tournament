@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
 
-const Personal = () => {
+const MyBets = () => {
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState(undefined)
   const [games, setGames] = useState([
@@ -15,9 +15,9 @@ const Personal = () => {
       name: 'QATvECU',
       teamOne: 'QAT',
       teamTwo: 'ECU',
-      winner: undefined,
-      teamOneGoals: 0,
-      teamTwoGoals: 0,
+      winner: 'QAT',
+      teamOneGoals: 2,
+      teamTwoGoals: 1,
     },
     {
       date: '2022-11-20',
@@ -32,7 +32,7 @@ const Personal = () => {
   ]);
 
   const toastOptions = {
-    position: "bottom-right",
+    position: "top-right",
     autoClose: 8000,
     pauseOnHover: true,
     draggable: true,
@@ -45,23 +45,55 @@ const Personal = () => {
         navigate("/login");
       } else {
         setCurrentUser(await JSON.parse(localStorage.getItem('worldcup-app-user')))
-
       }
     }
     check()
   }, [])
 
-  let yourDate = new Date()
-  yourDate.toISOString().split('T')[0]
-  yourDate.getHours()
+  useEffect(() => {
+    async function setScore() {
+      const scoreUser = await JSON.parse(localStorage.getItem('worldcup-app-user'))
+      let addToScore = 0
+      for (var i = 0; i < games.length; i++) {
+        if (games[i].winner) {
+          if (games[i].winner === scoreUser?.results[i].winner) {
+            addToScore += 2
+            if (games[i].winner.teamOneGoals === scoreUser?.results[i].teamOneGoals && games[i].winner.teamTwoGoals === scoreUser?.results[i].teamTwoGoals) {
+              addToScore += 1
+            }
+          }
+        }
+      }
+      scoreUser.score += addToScore
+      console.log(scoreUser)
+      // setscoreUser(scoreUser)
+      setCurrentUser(scoreUser)
+    }
+
+     setScore()
+  }, [])
+
+
+  // let yourDate = new Date()
+  // yourDate.toISOString().split('T')[0]
+  // yourDate.getHours()
 
 
   const handleBet = async (bet, index) => {
     try {
       currentUser.results[index] = bet
       const data = await worldCupService.updateUser(currentUser)
-      console.log(data)
-      toast.success('Your bet is set', toastOptions)
+      if (data.status === false) {
+        toast.error(data.msg, toastOptions);
+      }
+      if (data.status === true) {
+        localStorage.setItem(
+          'worldcup-app-user',
+          JSON.stringify(data.user)
+        );
+        setCurrentUser(JSON.parse(JSON.stringify(data.user)))
+        toast.success('Your bet is set', toastOptions);
+      }
     } catch (err) {
       console.log(err)
     }
@@ -74,6 +106,10 @@ const Personal = () => {
   return (
     <>
       <div>
+        {/* {currentUser && (
+          JSON.stringify(currentUser)
+        )} */}
+        <h1>{currentUser?.score}</h1>
         <div>
           {
             games.map((game, index) => {
@@ -93,4 +129,4 @@ const Personal = () => {
   )
 }
 
-export default Personal
+export default MyBets;

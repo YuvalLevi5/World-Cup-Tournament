@@ -48,6 +48,7 @@ const Register = () => {
     if (handleValidation()) {
       const { password, username } = values
       const data = await worldCupService.register(username, password)
+      console.log(data)
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
@@ -56,8 +57,7 @@ const Register = () => {
           'worldcup-app-user',
           JSON.stringify(data.user)
         );
-
-        navigate("/");
+        navigate("/login");
       }
     }
   }
