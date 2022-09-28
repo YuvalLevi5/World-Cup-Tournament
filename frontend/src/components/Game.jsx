@@ -41,7 +41,7 @@ const Game = ({ game, index, handleBet }) => {
                         <label>{game.teamTwo}</label>
                         <input onChange={(e) => handleChange(e, index)} type="number" name='teamTwoGoals' />
                     </div>
-                    <button type="submit">Log In</button>
+                    <button type="submit">Set Bet</button>
                 </form>
             </div>
         </div>

@@ -3,7 +3,6 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
-import soccerPlater from '../assets/imgs/soccer-player.svg'
 
 const Login = () => {
     const navigate = useNavigate()

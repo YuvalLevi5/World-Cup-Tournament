@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { json, useNavigate } from 'react-router-dom';
 import Game from '../components/Game';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Personal = () => {
   const navigate = useNavigate()
@@ -28,7 +30,13 @@ const Personal = () => {
     }
   ]);
 
-  let user
+  const toastOptions = {
+    position: "bottom-right",
+    autoClose: 8000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+}
 
   useEffect(() => {
     async function check() {
@@ -48,25 +56,37 @@ const Personal = () => {
 
 
   const handleBet = (bet, index) => {
-    console.log(bet)
-    console.log(index)
+    try {
+      currentUser.results[index] = bet
+      toast.success('Your bet is set',toastOptions )
+    } catch(err) {
+
+    }
+  }
+
+  const seeUser = () => {
+    console.log(currentUser)
   }
 
   return (
-    <div>
+    <>
       <div>
-        {
-          games.map((game, index) => {
-            return (
-              <div key={index}>
-                <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
-              </div>
-            )
-          })
+        <div>
+          {
+            games.map((game, index) => {
+              return (
+                <div key={index}>
+                  <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
+                </div>
+              )
+            })
 
-        }
+          }
+        </div>
+        {/* <button onClick={seeUser}>b;a</button> */}
       </div>
-    </div>
+      <ToastContainer />
+    </>
   )
 }
 
