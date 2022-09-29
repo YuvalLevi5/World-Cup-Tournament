@@ -54,26 +54,26 @@ const Game = ({ game, index, handleBet }) => {
 
     return (
 
-        <div>
+        <div className='game-zone'>
             <h2>{game.name}</h2>
-            <div>
-                <form onSubmit={(event) => handleSubmit(event)}>
-                    {
-                        ableToBet === true && (
-                            <h4>Game already started</h4>
-                        )
-                    }
-                    <div>
+            <form className='bet-form' onSubmit={(event) => handleSubmit(event)}>
+                {
+                    ableToBet === true && (
+                        <h4>Game already started</h4>
+                    )
+                }
+                <div className='bet-inputs'>
+                    <div className='team-score-section'>
                         <label>{game.teamOne}</label>
                         <input disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamOneGoals' />
                     </div>
-                    <div>
-                        <label>{game.teamTwo}</label>
+                    <div className='team-score-section'>
                         <input disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamTwoGoals' />
+                        <label>{game.teamTwo}</label>
                     </div>
-                    <button type="submit">Set Bet</button>
-                </form>
-            </div>
+                </div>
+                <button type="submit">Set Bet</button>
+            </form>
         </div>
     )
 }

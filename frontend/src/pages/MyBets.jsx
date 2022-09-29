@@ -14,7 +14,7 @@ const MyBets = () => {
   const [games, setGames] = useState([
     {
       date: '2022-11-20',
-      hour: 10,
+      hour: 19,
       name: 'QATvECU',
       teamOne: 'QAT',
       teamTwo: 'ECU',
@@ -125,7 +125,7 @@ const MyBets = () => {
 
   return (
     <>
-      <div>
+      <div className='my-bets-zone'>
         <h1>{currentUser?.score}</h1>
         {/* {
           currentDate && currentHour &&  (
