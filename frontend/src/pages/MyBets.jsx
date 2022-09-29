@@ -4,6 +4,10 @@ import Game from '../components/Game';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
+import one from '../assets/imgs/fans.svg';
+import two from '../assets/imgs/game-day.svg';
+import three from '../assets/imgs/goal.svg';
+import four from '../assets/imgs/soccer-player.svg';
 
 const MyBets = () => {
   const navigate = useNavigate()
@@ -14,7 +18,7 @@ const MyBets = () => {
   const [games, setGames] = useState([
     {
       date: '2022-11-20',
-      hour: 19,
+      hour: 10,
       name: 'QATvECU',
       teamOne: 'QAT',
       teamTwo: 'ECU',
@@ -31,7 +35,27 @@ const MyBets = () => {
       winner: undefined,
       teamOneGoals: 0,
       teamTwoGoals: 0,
-    }
+    },
+    {
+      date: '2022-11-20',
+      hour: 16,
+      name: 'ENGvIRN',
+      teamOne: 'ENG',
+      teamTwo: 'IRN',
+      winner: undefined,
+      teamOneGoals: 0,
+      teamTwoGoals: 0,
+    },
+    {
+      date: '2022-11-20',
+      hour: 16,
+      name: 'ENGvIRN',
+      teamOne: 'ENG',
+      teamTwo: 'IRN',
+      winner: undefined,
+      teamOneGoals: 0,
+      teamTwoGoals: 0,
+    },
   ]);
 
   const toastOptions = {
@@ -55,7 +79,7 @@ const MyBets = () => {
       // setScurrentMinutes(yourDate.getMinutes())
     }, 60000);
 
-    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+    return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
@@ -97,10 +121,6 @@ const MyBets = () => {
     setScore()
   }, [])
 
-  // let yourDate = new Date()
-  // yourDate.toISOString().split('T')[0]
-  // yourDate.getHours()
-
   const handleBet = async (bet, index) => {
     try {
       currentUser.results[index] = bet
@@ -126,16 +146,16 @@ const MyBets = () => {
   return (
     <>
       <div className='my-bets-zone'>
-        <h1>{currentUser?.score}</h1>
         {/* {
           currentDate && currentHour &&  (
             <div>
               <h1>{currentHour}</h1>
               <h1>{currentDate}</h1>
-            </div>
-          )
-        } */}
+              </div>
+              )
+            } */}
         <div>
+            <h1>{currentUser?.score}</h1>
           {
             games.map((game, index) => {
               return (
@@ -150,6 +170,7 @@ const MyBets = () => {
 
           }
         </div>
+        {/* <img src={one} alt="" /> */}
       </div>
       <ToastContainer />
     </>

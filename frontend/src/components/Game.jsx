@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import { BiFootball } from 'react-icons/bi'
 const Game = ({ game, index, handleBet }) => {
     const [currentHour, setScurrentHour] = useState(undefined)
     const [ableToBet, setAbleToBet] = useState(false)
@@ -65,14 +65,15 @@ const Game = ({ game, index, handleBet }) => {
                 <div className='bet-inputs'>
                     <div className='team-score-section'>
                         <label>{game.teamOne}</label>
-                        <input disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamOneGoals' />
+                        <input className='score-input' disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamOneGoals' />
                     </div>
+                    <BiFootball />
                     <div className='team-score-section'>
-                        <input disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamTwoGoals' />
+                        <input className='score-input' disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamTwoGoals' />
                         <label>{game.teamTwo}</label>
                     </div>
                 </div>
-                <button type="submit">Set Bet</button>
+                <button type="submit" className='btn'>Set Bet</button>
             </form>
         </div>
     )
