@@ -1,12 +1,16 @@
 .my-bets-zone {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-//     background: url('imgs/fans.svg'); 
-//     background-repeat: no-repeat;
-// background-position:bottom;
-// background-size: 100% 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .game-zone {
         display: flex;
         flex-direction: column;
@@ -15,7 +19,7 @@
         padding: 1rem;
         gap: 10px;
         border-radius: 10px;
-       background-color: white;
+        background-color: white;
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 
         h2 {
@@ -33,15 +37,30 @@
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
+                margin-bottom: 0.5rem;
 
-                .team1-score-section {
+                .team-score-section {
                     display: flex;
                     align-items: center;
-                    gap: 0.2rem;
+                    gap: 0.4rem;
                 }
 
 
             }
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    .my-bets-zone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url('imgs/stadium.jpg') no-repeat center center fixed;
+        height: 90vh;
+
+        img {
+            display: none;
         }
     }
 }

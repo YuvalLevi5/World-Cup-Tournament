@@ -146,16 +146,8 @@ const MyBets = () => {
   return (
     <>
       <div className='my-bets-zone'>
-        {/* {
-          currentDate && currentHour &&  (
-            <div>
-              <h1>{currentHour}</h1>
-              <h1>{currentDate}</h1>
-              </div>
-              )
-            } */}
+        <img src={two} alt="" />
         <div>
-            <h1>{currentUser?.score}</h1>
           {
             games.map((game, index) => {
               return (
@@ -170,7 +162,7 @@ const MyBets = () => {
 
           }
         </div>
-        {/* <img src={one} alt="" /> */}
+        <img src={one} alt="" />
       </div>
       <ToastContainer />
     </>

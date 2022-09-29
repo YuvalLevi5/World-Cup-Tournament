@@ -73,7 +73,13 @@ const Game = ({ game, index, handleBet }) => {
                         <label>{game.teamTwo}</label>
                     </div>
                 </div>
-                <button type="submit" className='btn'>Set Bet</button>
+                {
+                    ableToBet === false &&
+                    (
+
+                        <button type="submit" className='btn succes' disabled >Set Bet</button>
+                    )
+                }
             </form>
         </div>
     )

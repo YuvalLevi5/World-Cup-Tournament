@@ -4,10 +4,12 @@ import Allbets from './pages/Allbets';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import MyBets from './pages/MyBets';
+import AppHeader from './components/AppHeader';
 
 const App = () => {
   return (
     <Router>
+      <AppHeader />
       <Routes>
         <Route path='/mybets' element={<MyBets />} />
         <Route path='/register' element={<Register />} />
