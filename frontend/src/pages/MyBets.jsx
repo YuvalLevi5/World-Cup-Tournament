@@ -8,10 +8,13 @@ import { worldCupService } from '../services/world-cup-service'
 const MyBets = () => {
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState(undefined)
+  const [currentDate, setScurrentDate] = useState(undefined)
+  const [currentHour, setScurrentHour] = useState(undefined)
+  // const [currentMinutes, setScurrentMinutes] = useState(undefined)
   const [games, setGames] = useState([
     {
       date: '2022-11-20',
-      hour: 19,
+      hour: 10,
       name: 'QATvECU',
       teamOne: 'QAT',
       teamTwo: 'ECU',
@@ -38,6 +41,22 @@ const MyBets = () => {
     draggable: true,
     theme: "dark",
   }
+
+  useEffect(() => {
+    let yourDate = new Date()
+    setScurrentDate(yourDate.toISOString().split('T')[0])
+    setScurrentHour(yourDate.getHours())
+    // setScurrentMinutes(yourDate.getMinutes())
+
+    const interval = setInterval(() => {
+      let yourDate = new Date()
+      setScurrentDate(yourDate.toISOString().split('T')[0])
+      setScurrentHour(yourDate.getHours())
+      // setScurrentMinutes(yourDate.getMinutes())
+    }, 60000);
+
+    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  }, [])
 
   useEffect(() => {
     async function check() {
@@ -72,7 +91,7 @@ const MyBets = () => {
       scoreUser.score += addToScore
       await worldCupService.updateUser(scoreUser)
       setCurrentUser(scoreUser)
-      
+
     }
 
     setScore()
@@ -102,21 +121,29 @@ const MyBets = () => {
     }
   }
 
-  const seeUser = () => {
-    console.log(currentUser)
-  }
+
+
   return (
     <>
       <div>
         <h1>{currentUser?.score}</h1>
+        {/* {
+          currentDate && currentHour &&  (
+            <div>
+              <h1>{currentHour}</h1>
+              <h1>{currentDate}</h1>
+            </div>
+          )
+        } */}
         <div>
           {
             games.map((game, index) => {
               return (
                 <div key={index}>
-                  {game.hour > 10 && (
                     <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
-                  )}
+                  {/* {game.date === currentDate && (
+                    <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
+                  )} */}
                 </div>
               )
             })
