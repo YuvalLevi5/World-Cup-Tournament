@@ -16,8 +16,8 @@ const MyBets = () => {
       teamOne: 'QAT',
       teamTwo: 'ECU',
       winner: 'drew',
-      teamOneGoals: 0,
-      teamTwoGoals: 0,
+      teamOneGoals: 2,
+      teamTwoGoals: 2,
     },
     {
       date: '2022-11-20',
@@ -56,31 +56,31 @@ const MyBets = () => {
       let addToScore = 0
       for (var i = 0; i < games.length; i++) {
         if (games[i].winner) {
-          if (scoreUser?.results[i].isChecked === false) {
-            scoreUser.results[i].isChecked = true
-            if (games[i].winner === scoreUser?.results[i].winner) {
-              addToScore += 2
-              if (games[i].winner.teamOneGoals === scoreUser.results[i].teamOneGoals && games[i].winner.teamTwoGoals === scoreUser.results[i].teamTwoGoals) {
-                addToScore += 1
+          if (scoreUser.results.length > 0) {
+            if (scoreUser?.results[i].isChecked === false) {
+              scoreUser.results[i].isChecked = true
+              if (games[i].winner === scoreUser?.results[i].winner) {
+                addToScore += 2
+                if (games[i].teamOneGoals === scoreUser.results[i].teamOneGoals && games[i].teamTwoGoals === scoreUser.results[i].teamTwoGoals) {
+                  addToScore += 1
+                }
               }
             }
           }
         }
       }
-      // צריך לפתור את עניין התוצאה מדויקת ולשמור לדאטה בייס
       scoreUser.score += addToScore
-      // setscoreUser(scoreUser)
+      await worldCupService.updateUser(scoreUser)
       setCurrentUser(scoreUser)
+      
     }
 
     setScore()
   }, [])
 
-
   // let yourDate = new Date()
   // yourDate.toISOString().split('T')[0]
   // yourDate.getHours()
-
 
   const handleBet = async (bet, index) => {
     try {
@@ -105,27 +105,24 @@ const MyBets = () => {
   const seeUser = () => {
     console.log(currentUser)
   }
-
   return (
     <>
       <div>
-        {/* {currentUser && (
-          JSON.stringify(currentUser)
-        )} */}
         <h1>{currentUser?.score}</h1>
         <div>
           {
             games.map((game, index) => {
               return (
                 <div key={index}>
-                  <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
+                  {game.hour > 10 && (
+                    <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
+                  )}
                 </div>
               )
             })
 
           }
         </div>
-        {/* <button onClick={seeUser}>b;a</button> */}
       </div>
       <ToastContainer />
     </>
