@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
 import one from '../assets/imgs/fans.svg';
 import two from '../assets/imgs/game-day.svg';
-import three from '../assets/imgs/goal.svg';
-import four from '../assets/imgs/soccer-player.svg';
+// import three from '../assets/imgs/goal.svg';
+// import four from '../assets/imgs/soccer-player.svg';
 
 const MyBets = () => {
   const navigate = useNavigate()
@@ -92,6 +92,8 @@ const MyBets = () => {
     }
     check()
   }, [])
+
+  
 
   useEffect(() => {
     async function setScore() {

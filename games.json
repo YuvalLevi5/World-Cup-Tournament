@@ -1,0 +1,483 @@
+[
+    {
+        "date": "2022-11-20",
+        "hour": 19,
+        "name": "QATvECU",
+        "teamOne": "QAT",
+        "teamTwo": "ECU",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-21",
+        "hour": 16,
+        "name": "ENGvIRN",
+        "teamOne": "ENG",
+        "teamTwo": "IRN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-21",
+        "hour": 19,
+        "name": "SENvNED",
+        "teamOne": "SEN",
+        "teamTwo": "NED",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-21",
+        "hour": 22,
+        "name": "USAvWAL",
+        "teamOne": "USA",
+        "teamTwo": "WAL",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-22",
+        "hour": 13,
+        "name": "ARGvKSA",
+        "teamOne": "ARG",
+        "teamTwo": "KSA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-22",
+        "hour": 16,
+        "name": "DENvTUN",
+        "teamOne": "DEN",
+        "teamTwo": "TUN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-22",
+        "hour": 19,
+        "name": "MEXvPOL",
+        "teamOne": "MEX",
+        "teamTwo": "POL",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-22",
+        "hour": 22,
+        "name": "FRAvAUS",
+        "teamOne": "FRA",
+        "teamTwo": "AUS",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-23",
+        "hour": 13,
+        "name": "MARvCRO",
+        "teamOne": "MAR",
+        "teamTwo": "CRO",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-23",
+        "hour": 16,
+        "name": "GERvJPN",
+        "teamOne": "GER",
+        "teamTwo": "JPN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-23",
+        "hour": 19,
+        "name": "ESPvCRC",
+        "teamOne": "ESP",
+        "teamTwo": "CRC",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-23",
+        "hour": 22,
+        "name": "BELvCAN",
+        "teamOne": "BEL",
+        "teamTwo": "CAN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-24",
+        "hour": 13,
+        "name": "SUIvCMR",
+        "teamOne": "SUI",
+        "teamTwo": "CMR",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-24",
+        "hour": 16,
+        "name": "URUvKOR",
+        "teamOne": "URU",
+        "teamTwo": "KOR",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-24",
+        "hour": 19,
+        "name": "PORvGHA",
+        "teamOne": "POR",
+        "teamTwo": "GHA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-24",
+        "hour": 22,
+        "name": "BRAvSRB",
+        "teamOne": "BRA",
+        "teamTwo": "SRB",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-25",
+        "hour": 13,
+        "name": "WALvIRN",
+        "teamOne": "WAL",
+        "teamTwo": "IRN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-25",
+        "hour": 16,
+        "name": "QATvSEN",
+        "teamOne": "QAT",
+        "teamTwo": "SEN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-25",
+        "hour": 19,
+        "name": "NEDvECU",
+        "teamOne": "NED",
+        "teamTwo": "ECU",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-25",
+        "hour": 22,
+        "name": "ENGvUSA",
+        "teamOne": "ENG",
+        "teamTwo": "USA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-26",
+        "hour": 13,
+        "name": "TUNvAUS",
+        "teamOne": "TUN",
+        "teamTwo": "AUS",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-26",
+        "hour": 16,
+        "name": "POLvKSA",
+        "teamOne": "POL",
+        "teamTwo": "KSA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-26",
+        "hour": 19,
+        "name": "FRAvDEN",
+        "teamOne": "FRA",
+        "teamTwo": "DEN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-26",
+        "hour": 22,
+        "name": "ARGvMEX",
+        "teamOne": "ARG",
+        "teamTwo": "MEX",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-27",
+        "hour": 13,
+        "name": "JPNvCRC",
+        "teamOne": "JPN",
+        "teamTwo": "CRC",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-27",
+        "hour": 16,
+        "name": "BELvMAR",
+        "teamOne": "BEL",
+        "teamTwo": "MAR",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-27",
+        "hour": 19,
+        "name": "CROvCAN",
+        "teamOne": "CRO",
+        "teamTwo": "CAN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-27",
+        "hour": 22,
+        "name": "ESPvGER",
+        "teamOne": "ESP",
+        "teamTwo": "GER",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-28",
+        "hour": 13,
+        "name": "CMRvSRB",
+        "teamOne": "CMR",
+        "teamTwo": "SRB",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-28",
+        "hour": 16,
+        "name": "KORvGHA",
+        "teamOne": "KOR",
+        "teamTwo": "GHA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-28",
+        "hour": 19,
+        "name": "BRAvSUI",
+        "teamOne": "BRA",
+        "teamTwo": "SUI",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-28",
+        "hour": 22,
+        "name": "PORvURU",
+        "teamOne": "POR",
+        "teamTwo": "URU",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-29",
+        "hour": 18,
+        "name": "NEDvQAT",
+        "teamOne": "NED",
+        "teamTwo": "QAT",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-29",
+        "hour": 18,
+        "name": "ECUvSEN",
+        "teamOne": "ECU",
+        "teamTwo": "SEN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-29",
+        "hour": 22,
+        "name": "IRNvUSA",
+        "teamOne": "IRN",
+        "teamTwo": "USA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-29",
+        "hour": 22,
+        "name": "WALvENG",
+        "teamOne": "WAL",
+        "teamTwo": "ENG",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-30",
+        "hour": 18,
+        "name": "AUSvDEN",
+        "teamOne": "AUS",
+        "teamTwo": "DEN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-30",
+        "hour": 18,
+        "name": "TUNvFRA",
+        "teamOne": "TUN",
+        "teamTwo": "FRA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-30",
+        "hour": 22,
+        "name": "POLvARG",
+        "teamOne": "POL",
+        "teamTwo": "ARG",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-30",
+        "hour": 22,
+        "name": "KSAvMEX",
+        "teamOne": "KSA",
+        "teamTwo": "MEX",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-01",
+        "hour": 18,
+        "name": "CROvBEL",
+        "teamOne": "COL",
+        "teamTwo": "BEL",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-01",
+        "hour": 18,
+        "name": "CANvMAR",
+        "teamOne": "CAN",
+        "teamTwo": "MAR",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-01",
+        "hour": 22,
+        "name": "JPNvESP",
+        "teamOne": "JPN",
+        "teamTwo": "SPN",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-01",
+        "hour": 22,
+        "name": "CRCvGER",
+        "teamOne": "CRC",
+        "teamTwo": "GER",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-02",
+        "hour": 18,
+        "name": "GHAvURU",
+        "teamOne": "GHA",
+        "teamTwo": "URU",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-02",
+        "hour": 18,
+        "name": "KORvPOR",
+        "teamOne": "KOR",
+        "teamTwo": "POR",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-02",
+        "hour": 22,
+        "name": "SRBvSUI",
+        "teamOne": "SRB",
+        "teamTwo": "SUI",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-12-02",
+        "hour": 22,
+        "name": "CMRvBRA",
+        "teamOne": "CMR",
+        "teamTwo": "BRA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    }
+]
+
