@@ -9,6 +9,7 @@ app.use(express.static('public'))
 app.use(express.json())
 
 const authRoutes = require('./api/auth/auth.routes')
+const gamesRoutes = require('./api/games/games.routes')
 
 if (process.env.NODE_ENV === 'production') {
     console.log("production")
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use('/api/auth', authRoutes)
+app.use('/api/games', gamesRoutes)
 
 app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))

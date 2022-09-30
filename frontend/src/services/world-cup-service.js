@@ -4,7 +4,8 @@ import { httpService } from "./http.service"
 export const worldCupService = {
     login,
     register,
-    updateUser
+    updateUser,
+    getGames
 }
 
 
@@ -33,4 +34,9 @@ async function updateUser(user) {
     } catch (err) {
         console.log(err)
     }
+}
+
+async function getGames()  {
+    const data = await httpService.get('games')
+    return data
 }
