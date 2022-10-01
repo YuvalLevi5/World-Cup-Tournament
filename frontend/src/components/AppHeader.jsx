@@ -10,9 +10,9 @@ const AppHeader = () => {
             <div onClick={toggleMenu} className="screen"></div>
 
             <header className="main-header">
-                <div className="main-header-option main-layout flex justify-between items-center">
+                <div className="main-header-option main-layout">
                     <div className="logo header-logo">World Cup</div>
-                    <ul className="main-nav clean-list flex">
+                    <ul className="main-nav">
                         <li><NavLink to='/mybets'>My Bets</NavLink></li>
                         <li><NavLink to='/'>All Bets</NavLink></li>
                     </ul>
