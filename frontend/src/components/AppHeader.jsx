@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-const AppHeader = () => {
 
-const [score, setScore] = useState(0)
+const AppHeader = () => {
+    const [seeHeader, setSeeHeader] = useState(true)
 
     const toggleMenu = () => {
         document.body.classList.toggle('menu-open')
     }
-    
+
     return (
         <>
+
             <div onClick={toggleMenu} className="screen"></div>
 
             <header className="main-header">
@@ -25,6 +26,7 @@ const [score, setScore] = useState(0)
                 </div>
             </header >
         </>
+
     )
 }
 

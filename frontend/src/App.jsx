@@ -10,7 +10,6 @@ import Personal from './pages/Personal';
 const App = () => {
   return (
     <Router>
-      <AppHeader />
       <Routes>
         <Route path='/personal' element={<Personal />} />
         <Route path='/mybets' element={<MyBets />} />

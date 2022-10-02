@@ -43,7 +43,6 @@ const Login = () => {
         const { username, password } = values
         if (validateForm()) {
             const data = await worldCupService.login(username, password)
-            console.log(data.user)
             if (data.status === false) {
                 toast.error(data.msg, toastOptions);
             }

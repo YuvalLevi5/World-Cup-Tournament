@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
 import one from '../assets/imgs/fans.svg';
 import two from '../assets/imgs/game-day.svg';
+import AppHeader from '../components/AppHeader';
 
 const MyBets = () => {
   const navigate = useNavigate()
@@ -108,6 +109,8 @@ const MyBets = () => {
 
   return (
     <>
+      <AppHeader />
+
       <div className='my-bets-zone'>
         <img src={two} alt="" />
         <div>
@@ -115,7 +118,7 @@ const MyBets = () => {
             games.map((game, index) => {
               return (
                 <div key={index}>
-                    {/* <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} /> */}
+                  {/* <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} /> */}
                   {game.date === currentDate && (
                     <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
                   )}
