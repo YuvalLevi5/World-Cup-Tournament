@@ -28,7 +28,29 @@ const Allbets = () => {
   }, [])
 
   return (
-    <div>Allbets</div>
+    <div className='table-container'>
+      <table className='users-table'>
+        <thead>
+          <tr>
+            <th>Users</th>
+            {
+              games && (
+                games.map((game) => {
+                  // if (game.winner) {
+                    return <th key={game.name} >{game.name}</th>
+                  // }
+                })
+              )
+            }
+          </tr>
+        </thead>
+        <tbody>
+          {
+            
+          }
+        </tbody>
+      </table>
+    </div>
   )
 }
 

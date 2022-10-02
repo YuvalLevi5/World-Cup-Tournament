@@ -40,3 +40,8 @@ async function getGames()  {
     const data = await httpService.get('games')
     return data
 }
+
+async function getUsers() {
+    const data = await httpService.get('auth')
+    return data
+}
