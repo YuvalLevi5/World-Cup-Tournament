@@ -6,57 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { worldCupService } from '../services/world-cup-service'
 import one from '../assets/imgs/fans.svg';
 import two from '../assets/imgs/game-day.svg';
-// import three from '../assets/imgs/goal.svg';
-// import four from '../assets/imgs/soccer-player.svg';
 
 const MyBets = () => {
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState(undefined)
   const [currentDate, setScurrentDate] = useState(undefined)
-  const [currentHour, setScurrentHour] = useState(undefined)
-  // const [currentMinutes, setScurrentMinutes] = useState(undefined)
-  // const [games, setGames] = useState([
-  //   {
-  //     date: '2022-11-20',
-  //     hour: 10,
-  //     name: 'QATvECU',
-  //     teamOne: 'QAT',
-  //     teamTwo: 'ECU',
-  //     winner: 'drew',
-  //     teamOneGoals: 2,
-  //     teamTwoGoals: 2,
-  //   },
-  //   {
-  //     date: '2022-11-20',
-  //     hour: 16,
-  //     name: 'ENGvIRN',
-  //     teamOne: 'ENG',
-  //     teamTwo: 'IRN',
-  //     winner: undefined,
-  //     teamOneGoals: 0,
-  //     teamTwoGoals: 0,
-  //   },
-  //   {
-  //     date: '2022-11-20',
-  //     hour: 16,
-  //     name: 'ENGvIRN',
-  //     teamOne: 'ENG',
-  //     teamTwo: 'IRN',
-  //     winner: undefined,
-  //     teamOneGoals: 0,
-  //     teamTwoGoals: 0,
-  //   },
-  //   {
-  //     date: '2022-11-20',
-  //     hour: 16,
-  //     name: 'ENGvIRN',
-  //     teamOne: 'ENG',
-  //     teamTwo: 'IRN',
-  //     winner: undefined,
-  //     teamOneGoals: 0,
-  //     teamTwoGoals: 0,
-  //   },
-  // ]);
   const [games, setGames] = useState([])
 
   const toastOptions = {
@@ -100,7 +54,6 @@ const MyBets = () => {
       setGames(worldCupGames)
 
     }
-
     getGames()
   }, [])
 
