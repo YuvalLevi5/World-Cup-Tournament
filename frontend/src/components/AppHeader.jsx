@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 const AppHeader = () => {
+
+const [score, setScore] = useState(0)
 
     const toggleMenu = () => {
         document.body.classList.toggle('menu-open')
     }
+    
     return (
         <>
             <div onClick={toggleMenu} className="screen"></div>

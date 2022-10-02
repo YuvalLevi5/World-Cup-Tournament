@@ -75,9 +75,8 @@ const Game = ({ game, index, handleBet }) => {
                 </div>
                 {
                     ableToBet === false &&
-                    (
-
-                        <button type="submit" className='btn succes' disabled >Set Bet</button>
+                    ( 
+                        <button type="submit" className='btn succes' disabled={ableToBet} >Set Bet</button>
                     )
                 }
             </form>

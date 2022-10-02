@@ -15,48 +15,49 @@ const MyBets = () => {
   const [currentDate, setScurrentDate] = useState(undefined)
   const [currentHour, setScurrentHour] = useState(undefined)
   // const [currentMinutes, setScurrentMinutes] = useState(undefined)
-  const [games, setGames] = useState([
-    {
-      date: '2022-11-20',
-      hour: 10,
-      name: 'QATvECU',
-      teamOne: 'QAT',
-      teamTwo: 'ECU',
-      winner: 'drew',
-      teamOneGoals: 2,
-      teamTwoGoals: 2,
-    },
-    {
-      date: '2022-11-20',
-      hour: 16,
-      name: 'ENGvIRN',
-      teamOne: 'ENG',
-      teamTwo: 'IRN',
-      winner: undefined,
-      teamOneGoals: 0,
-      teamTwoGoals: 0,
-    },
-    {
-      date: '2022-11-20',
-      hour: 16,
-      name: 'ENGvIRN',
-      teamOne: 'ENG',
-      teamTwo: 'IRN',
-      winner: undefined,
-      teamOneGoals: 0,
-      teamTwoGoals: 0,
-    },
-    {
-      date: '2022-11-20',
-      hour: 16,
-      name: 'ENGvIRN',
-      teamOne: 'ENG',
-      teamTwo: 'IRN',
-      winner: undefined,
-      teamOneGoals: 0,
-      teamTwoGoals: 0,
-    },
-  ]);
+  // const [games, setGames] = useState([
+  //   {
+  //     date: '2022-11-20',
+  //     hour: 10,
+  //     name: 'QATvECU',
+  //     teamOne: 'QAT',
+  //     teamTwo: 'ECU',
+  //     winner: 'drew',
+  //     teamOneGoals: 2,
+  //     teamTwoGoals: 2,
+  //   },
+  //   {
+  //     date: '2022-11-20',
+  //     hour: 16,
+  //     name: 'ENGvIRN',
+  //     teamOne: 'ENG',
+  //     teamTwo: 'IRN',
+  //     winner: undefined,
+  //     teamOneGoals: 0,
+  //     teamTwoGoals: 0,
+  //   },
+  //   {
+  //     date: '2022-11-20',
+  //     hour: 16,
+  //     name: 'ENGvIRN',
+  //     teamOne: 'ENG',
+  //     teamTwo: 'IRN',
+  //     winner: undefined,
+  //     teamOneGoals: 0,
+  //     teamTwoGoals: 0,
+  //   },
+  //   {
+  //     date: '2022-11-20',
+  //     hour: 16,
+  //     name: 'ENGvIRN',
+  //     teamOne: 'ENG',
+  //     teamTwo: 'IRN',
+  //     winner: undefined,
+  //     teamOneGoals: 0,
+  //     teamTwoGoals: 0,
+  //   },
+  // ]);
+  const [games, setGames] = useState([])
 
   const toastOptions = {
     position: "top-right",
@@ -93,7 +94,15 @@ const MyBets = () => {
     check()
   }, [])
 
-  
+  useEffect(() => {
+    async function getGames() {
+      const worldCupGames = await worldCupService.getGames()
+      setGames(worldCupGames)
+
+    }
+
+    getGames()
+  }, [])
 
   useEffect(() => {
     async function setScore() {
@@ -121,7 +130,7 @@ const MyBets = () => {
     }
 
     setScore()
-  }, [])
+  }, [games])
 
   const handleBet = async (bet, index) => {
     try {
@@ -154,10 +163,10 @@ const MyBets = () => {
             games.map((game, index) => {
               return (
                 <div key={index}>
+                    {/* <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} /> */}
+                  {game.date === currentDate && (
                     <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
-                  {/* {game.date === currentDate && (
-                    <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
-                  )} */}
+                  )}
                 </div>
               )
             })
