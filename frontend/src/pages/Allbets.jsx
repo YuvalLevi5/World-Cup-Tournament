@@ -8,15 +8,12 @@ const Allbets = () => {
   const [games, setGames] = useState([])
   const [users, setUsers] = useState([])
   const [currentHour, setScurrentHour] = useState(undefined)
-  const [currentUser, setCurrentUser] = useState(undefined)
   const [currentDate, setScurrentDate] = useState(undefined)
 
   useEffect(() => {
     async function check() {
       if (!localStorage.getItem('worldcup-app-user')) {
         navigate("/login");
-      } else {
-        setCurrentUser(await JSON.parse(localStorage.getItem('worldcup-app-user')))
       }
     }
     check()
@@ -139,7 +136,7 @@ const Allbets = () => {
                             if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour < currentHour)) {
                               return (
                                 <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
-                                  {result.teamOneGoals}:{result.teamTwoGoals}
+                                  {result?.teamOneGoals}:{result?.teamTwoGoals}
                                 </td>
                               )
                             }

@@ -17,7 +17,8 @@ const [score, setScore] = useState(0)
                 <div className="main-header-option main-layout">
                     <div className="logo header-logo">World Cup</div>
                     <ul className="main-nav">
-                        <li><NavLink to='/mybets'>My Bets</NavLink></li>
+                        <li><NavLink to='/personal'>My Bets History</NavLink></li>
+                        <li><NavLink to='/mybets'>Bets</NavLink></li>
                         <li><NavLink to='/'>All Bets</NavLink></li>
                     </ul>
                     <button onClick={toggleMenu} className="btn menu-toggle-btn">☰</button>
