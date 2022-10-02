@@ -103,54 +103,57 @@ const Allbets = () => {
   }
 
   return (
-    <div className='table-container'>
-      <table className='users-table'>
-        <thead>
-          <tr>
-            <th>Users</th>
-            <th>Score</th>
+    <div className='all-bets-page'>
+
+      <div className='table-container'>
+        <table className='users-table'>
+          <thead>
+            <tr>
+              <th>Users</th>
+              <th>Score</th>
+              {
+                games && (
+                  games.map((game) => {
+                    return (
+                      <th key={game.name}>
+                        {game.name} <br />
+                        {game.teamOneGoals}:{game.teamTwoGoals}
+                      </th>
+                    )
+                  })
+                )
+              }
+            </tr>
+          </thead>
+          <tbody>
             {
-              games && (
-                games.map((game) => {
+              users && (
+                users.map((user) => {
                   return (
-                    <th key={game.name}>
-                      {game.name} <br />
-                      {game.teamOneGoals}:{game.teamTwoGoals}
-                    </th>
+                    <tr key={user._id}>
+                      <td>{user.username}</td>
+                      <td>{user.score}</td>
+                      {
+                        user.results && (
+                          user.results.map((result, index) => {
+                            if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour < currentHour)) {
+                              return (
+                                <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
+                                  {result.teamOneGoals}:{result.teamTwoGoals}
+                                </td>
+                              )
+                            }
+                          })
+                        )
+                      }
+                    </tr>
                   )
                 })
               )
             }
-          </tr>
-        </thead>
-        <tbody>
-          {
-            users && (
-              users.map((user) => {
-                return (
-                  <tr key={user._id}>
-                    <td>{user.username}</td>
-                    <td>{user.score}</td>
-                    {
-                      user.results && (
-                        user.results.map((result, index) => {
-                          if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour < currentHour)) {
-                            return (
-                              <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
-                                {result.teamOneGoals}:{result.teamTwoGoals}
-                              </td>
-                            )
-                          }
-                        })
-                      )
-                    }
-                  </tr>
-                )
-              })
-            )
-          }
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

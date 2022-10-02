@@ -2,60 +2,7 @@
 
 @import './pages/login';
 @import './pages/my-pages';
+@import './pages/all-bets';
 @import './cmps/app-header';
 
 
-.table-container {
-    width: 90%;
-    margin: auto;
-    overflow-x: auto;
-    margin-top: 1rem;
-
-    .users-table {
-        font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        border: 1px solid #ddd;
-        margin: auto;
-        border-spacing: 0;
-        width: 100%;
-
-        td,
-        th {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-
-            .three {
-                background-color: green;
-            }
-        }
-
-        tr:nth-child(even) {
-            background-color: rgb(255, 240, 240);
-        }
-
-        th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            background-color: rgb(122, 18, 47);
-            color: #fff;
-          }
-    }
-}
-
-
-.three {
-    background-color: green;
-}
-
-.two {
-    background-color: lightgreen;
-}
-
-.pending {
-    background-color: #ffbf7b;
-}
-
-.red {
-    background-color: red;
-}

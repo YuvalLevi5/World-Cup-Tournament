@@ -1,0 +1,83 @@
+.all-bets-page {
+    height: 90vh;
+    background: url('imgs/goal.svg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 1rem;
+
+    .table-container {
+        width: 90%;
+        margin: auto;
+        overflow-x: auto;
+        background-color: rgb(255, 240, 240);
+
+        .users-table {
+            font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin: auto;
+            border-spacing: 0;
+            width: 100%;
+
+            td,
+            th {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+
+                .three {
+                    background-color: green;
+                }
+            }
+
+            tr:nth-child(even) {
+                background-color: rgb(255, 240, 240);
+            }
+
+            tr:nth-child(odd) {
+                background-color: rgb(255, 240, 240);
+            }
+
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                background-color: rgb(122, 18, 47);
+                color: #fff;
+            }
+        }
+    }
+}
+
+.table-container::-webkit-scrollbar {
+    height: 8px;
+    width: 10px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #091e4214;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #091e421f;
+    border-radius: 10px;
+}
+
+
+.three {
+    background-color: green;
+}
+
+.two {
+    background-color: lightgreen;
+}
+
+.pending {
+    background-color: #ffbf7b;
+}
+
+.red {
+    background-color: red;
+}
