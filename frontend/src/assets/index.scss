@@ -10,6 +10,7 @@
     margin: auto;
     overflow-x: auto;
     margin-top: 1rem;
+
     .users-table {
         font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -18,16 +19,39 @@
         border-spacing: 0;
         width: 100%;
 
+        td,
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+
+            .three {
+                background-color: green;
+            }
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(255, 240, 240);
+        }
+
         th {
             padding-top: 12px;
             padding-bottom: 12px;
-            background-color: #5588a3;
+            background-color: rgb(122, 18, 47);
             color: #fff;
-            cursor: pointer;
-            position: relative;
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+          }
     }
+}
+
+
+.three {
+    background-color: green;
+}
+
+.two {
+    background-color: lightgreen;
+}
+
+.pending {
+    background-color: #ffbf7b;
 }

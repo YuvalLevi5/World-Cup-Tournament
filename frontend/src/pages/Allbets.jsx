@@ -37,6 +37,48 @@ const Allbets = () => {
     getUsers()
   }, [])
 
+  useEffect(() => {
+    async function setScore() {
+      for (var i = 0; i < users.length; i++) {
+        let addToScore = 0
+        const scoreUser = JSON.parse(JSON.stringify(users[i]))
+        for (var i = 0; i < games.length; i++) {
+          if (games[i].winner) {
+            if (scoreUser.results.length > 0) {
+              if (scoreUser?.results[i].isChecked === false) {
+                scoreUser.results[i].isChecked = true
+                if (games[i].winner === scoreUser?.results[i].winner) {
+                  addToScore += 2
+                  if (games[i].teamOneGoals === scoreUser.results[i].teamOneGoals && games[i].teamTwoGoals === scoreUser.results[i].teamTwoGoals) {
+                    addToScore += 1
+                  }
+                }
+              }
+            }
+          }
+        }
+        scoreUser.score += addToScore
+        await worldCupService.updateUser(scoreUser)
+      }
+    }
+
+    setScore()
+  }, [games, users])
+
+  const getClass = (userScoreTeamOne, userScoreTeamTwo, userWinner, ftTeamOneGoals, ftTeamTwoGoals, ftTeamWinner) => {
+    let status = ''
+    if (!ftTeamWinner) {
+      return 'pending'
+    }
+    if (userWinner === ftTeamWinner) {
+      status = 'two'
+    }
+    if (userScoreTeamOne === ftTeamOneGoals && userScoreTeamTwo === ftTeamTwoGoals) {
+      status = 'three'
+    }
+
+    return status
+  }
 
   return (
     <div className='table-container'>
@@ -44,12 +86,16 @@ const Allbets = () => {
         <thead>
           <tr>
             <th>Users</th>
+            <th>Score</th>
             {
               games && (
                 games.map((game) => {
-                  // if (game.winner) {
-                  return <th key={game.name} >{game.name}</th>
-                  // }
+                  return (
+                    <th key={game.name}>
+                      {game.name} <br />
+                      {game.teamOneGoals}:{game.teamTwoGoals}
+                    </th>
+                  )
                 })
               )
             }
@@ -62,11 +108,14 @@ const Allbets = () => {
                 return (
                   <tr key={user._id}>
                     <td>{user.username}</td>
+                    <td>{user.score}</td>
                     {
                       user.results && (
                         user.results.map((result, index) => {
                           return (
-                            <td key={uuidv4()}>{result.teamOneGoals}:{result.teamTwoGoals}</td>
+                            <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
+                              {result.teamOneGoals}:{result.teamTwoGoals}
+                            </td>
                           )
                         })
                       )
