@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import Logout from './Logout'
 
 const AppHeader = () => {
     const [seeHeader, setSeeHeader] = useState(true)
@@ -21,6 +22,7 @@ const AppHeader = () => {
                         <li><NavLink to='/'>All Bets</NavLink></li>
                         <li><NavLink to='/mybets'>Bets</NavLink></li>
                         <li><NavLink to='/personal'>My Bets History</NavLink></li>
+                        <li> <Logout /> </li>
                     </ul>
                     <button onClick={toggleMenu} className="btn menu-toggle-btn">☰</button>
                 </div>
