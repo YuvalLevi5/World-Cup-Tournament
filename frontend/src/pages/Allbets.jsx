@@ -7,7 +7,9 @@ const Allbets = () => {
   const navigate = useNavigate()
   const [games, setGames] = useState([])
   const [users, setUsers] = useState([])
+  const [currentHour, setScurrentHour] = useState(undefined)
   const [currentUser, setCurrentUser] = useState(undefined)
+  const [currentDate, setScurrentDate] = useState(undefined)
 
   useEffect(() => {
     async function check() {
@@ -35,6 +37,23 @@ const Allbets = () => {
     }
 
     getUsers()
+  }, [])
+
+  useEffect(() => {
+    let yourDate = new Date()
+    setScurrentDate(yourDate.toISOString().split('T')[0])
+    let currentHour = yourDate.getHours()
+    setScurrentHour(yourDate.getHours())
+
+    const interval = setInterval(() => {
+      let yourDate = new Date()
+      setScurrentDate(yourDate.toISOString().split('T')[0])
+      let currentHour = yourDate.getHours()
+      setScurrentHour(yourDate.getHours())
+    }, 60000);
+
+    return () => clearInterval(interval);
+
   }, [])
 
   useEffect(() => {
@@ -76,6 +95,9 @@ const Allbets = () => {
     if (userScoreTeamOne === ftTeamOneGoals && userScoreTeamTwo === ftTeamTwoGoals) {
       status = 'three'
     }
+    if (!status) {
+      status = 'red'
+    }
 
     return status
   }
@@ -112,11 +134,13 @@ const Allbets = () => {
                     {
                       user.results && (
                         user.results.map((result, index) => {
-                          return (
-                            <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
-                              {result.teamOneGoals}:{result.teamTwoGoals}
-                            </td>
-                          )
+                          if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour < currentHour)) {
+                            return (
+                              <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
+                                {result.teamOneGoals}:{result.teamTwoGoals}
+                              </td>
+                            )
+                          }
                         })
                       )
                     }
