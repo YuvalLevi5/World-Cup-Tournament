@@ -5,7 +5,8 @@ export const worldCupService = {
     login,
     register,
     updateUser,
-    getGames
+    getGames,
+    getUsers
 }
 
 
