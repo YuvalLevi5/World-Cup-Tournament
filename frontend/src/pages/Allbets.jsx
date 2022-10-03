@@ -56,17 +56,18 @@ const Allbets = () => {
 
   useEffect(() => {
     async function setScore() {
-      for (var i = 0; i < users.length; i++) {
+      const worldCupUsers = await worldCupService.getUsers()
+      if (games.length === 0) return
+      for (var i = 0; i < worldCupUsers.length; i++) {
         let addToScore = 0
-        const scoreUser = JSON.parse(JSON.stringify(users[i]))
-        for (var i = 0; i < games.length; i++) {
-          if (games[i].winner) {
-            if (scoreUser.results.length > 0) {
-              if (scoreUser?.results[i].isChecked === false) {
-                scoreUser.results[i].isChecked = true
-                if (games[i].winner === scoreUser?.results[i].winner) {
+        for (var j = 0; j < games.length; j++) {
+          if (games[j].winner) {
+            if (worldCupUsers[i].results.length > 0) {
+              if (worldCupUsers[i]?.results[j]?.isChecked === false) {
+                worldCupUsers[i].results[j].isChecked = true
+                if (games[j]?.winner === worldCupUsers[i]?.results[j]?.winner) {
                   addToScore += 2
-                  if (games[i].teamOneGoals === scoreUser.results[i].teamOneGoals && games[i].teamTwoGoals === scoreUser.results[i].teamTwoGoals) {
+                  if (games[i].teamOneGoals === worldCupUsers[i]?.results[j].teamOneGoals && games[i].teamTwoGoals === worldCupUsers[i]?.results[j].teamTwoGoals) {
                     addToScore += 1
                   }
                 }
@@ -74,13 +75,15 @@ const Allbets = () => {
             }
           }
         }
-        scoreUser.score += addToScore
-        await worldCupService.updateUser(scoreUser)
+        worldCupUsers[i].score += addToScore
+        await worldCupService.updateUser(worldCupUsers[i])
       }
+      const updatedWorldCupUsers = await worldCupService.getUsers()
+      setUsers(updatedWorldCupUsers)
     }
 
     setScore()
-  }, [games, users])
+  }, [games])
 
   const getClass = (userScoreTeamOne, userScoreTeamTwo, userWinner, ftTeamOneGoals, ftTeamTwoGoals, ftTeamWinner) => {
     let status = ''
@@ -136,7 +139,7 @@ const Allbets = () => {
                         {
                           user.results && (
                             user.results.map((result, index) => {
-                              if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour <= currentHour)) {
+                              if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour <= currentHour) || games[index].winner) {
                                 return (
                                   <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
                                     {result?.teamOneGoals}:{result?.teamTwoGoals}
