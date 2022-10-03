@@ -78,6 +78,7 @@
         opacity: 0;
         transition: 0.6s;
         pointer-events: none;
+        z-index: 2;
     }
 
     body.menu-open .screen {
@@ -89,7 +90,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        z-index: 1;
+        z-index: 5;
         height: 100%;
         flex-direction: column;
         background-color: #111;
