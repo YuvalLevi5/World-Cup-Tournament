@@ -136,7 +136,7 @@ const Allbets = () => {
                         {
                           user.results && (
                             user.results.map((result, index) => {
-                              if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour < currentHour)) {
+                              if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour <= currentHour)) {
                                 return (
                                   <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
                                     {result?.teamOneGoals}:{result?.teamTwoGoals}
