@@ -106,6 +106,7 @@ const MyBets = () => {
     }
   }
 
+  console.log(currentDate)
 
   return (
     <>
