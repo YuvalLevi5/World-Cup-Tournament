@@ -15,7 +15,7 @@ const Register = () => {
 
   const toastOptions = {
     position: "bottom-right",
-    autoClose: 8000,
+    autoClose: 2500,
     pauseOnHover: true,
     draggable: true,
     theme: "dark"
