@@ -31,7 +31,7 @@ const MyBets = () => {
     const interval = setInterval(() => {
       let yourDate = new Date()
       setScurrentDate(yourDate.toISOString().split('T')[0])
-      setScurrentHour(yourDate.getHours())
+      // setScurrentHour(yourDate.getHours())
       // setScurrentMinutes(yourDate.getMinutes())
     }, 60000);
 
