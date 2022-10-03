@@ -36,5 +36,5 @@ app.get('/**', (req, res) => {
 
 const port = process.env.PORT || 3030
 http.listen(port, () => {
-    console.log('server is running on port' + port)
+    console.log('server is running on port: ' + port)
 })
