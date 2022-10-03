@@ -9,8 +9,10 @@
 
     .table-container {
         width: 90%;
+        max-height: 90%;
         margin: auto;
         overflow-x: auto;
+        overflow-y: auto;
         background-color: rgb(255, 240, 240);
 
         .users-table {
@@ -20,6 +22,12 @@
             margin: auto;
             border-spacing: 0;
             width: 100%;
+
+            thead {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
 
             td,
             th {
@@ -45,6 +53,13 @@
                 padding-bottom: 12px;
                 background-color: rgb(122, 18, 47);
                 color: #fff;
+            }
+
+            .user-name-td {
+                position: sticky;
+                left: 0;
+                background-color: rgb(235, 220, 220);
+
             }
         }
     }

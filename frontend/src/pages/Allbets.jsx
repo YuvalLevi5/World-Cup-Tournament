@@ -131,7 +131,7 @@ const Allbets = () => {
                   users.map((user) => {
                     return (
                       <tr key={user._id}>
-                        <td>{user.username}</td>
+                        <td className='user-name-td' >{user.username}</td>
                         <td>{user.score}</td>
                         {
                           user.results && (
