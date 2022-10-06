@@ -19,9 +19,9 @@ const AppHeader = () => {
                 <div className="main-header-option main-layout">
                     <div className="logo header-logo">World Cup</div>
                     <ul className="main-nav">
-                        <li><NavLink to='/'>All Bets</NavLink></li>
-                        <li><NavLink to='/mybets'>Bets</NavLink></li>
-                        <li><NavLink to='/personal'>My Bets History</NavLink></li>
+                        <li><NavLink to='/' onClick={toggleMenu}>Scores</NavLink></li>
+                        <li><NavLink to='/mybets' onClick={toggleMenu}>Bets</NavLink></li>
+                        <li><NavLink to='/personal' onClick={toggleMenu}>My Bets History</NavLink></li>
                         <li> <Logout /> </li>
                     </ul>
                     <button onClick={toggleMenu} className="btn menu-toggle-btn">☰</button>

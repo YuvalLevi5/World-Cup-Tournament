@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
-let faviconURL = '/faveicon.svg'
+let faviconURL = './public/faveicon.svg'
 
 // https://vitejs.dev/config/
 export default defineConfig({
