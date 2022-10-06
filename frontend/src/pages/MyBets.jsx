@@ -7,6 +7,7 @@ import { worldCupService } from '../services/world-cup-service'
 import one from '../assets/imgs/fans.svg';
 import two from '../assets/imgs/game-day.svg';
 import AppHeader from '../components/AppHeader';
+import Winner from '../components/Winner';
 
 const MyBets = () => {
   const navigate = useNavigate()
@@ -86,7 +87,6 @@ const MyBets = () => {
             games.map((game, index) => {
               return (
                 <div key={index}>
-                  {/* <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} /> */}
                   {game.date === currentDate && !game.winner && (
                     <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
                   )}

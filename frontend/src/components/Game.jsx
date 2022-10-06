@@ -62,13 +62,7 @@ const Game = ({ game, index, handleBet }) => {
         } else {
             winner = 'drew'
         }
-        // if (game.teamOneGoals > game.teamTwoGoals) {
-        //     winner = game.teamOne
-        // } else if (game.teamTwoGoals > game.teamOneGoals) {
-        //     winner = game.teamTwo
-        // } else {
-        //     winner = 'drew'
-        // }
+
 
         const userGameBet = {
             winner: winner,
@@ -76,12 +70,6 @@ const Game = ({ game, index, handleBet }) => {
             teamTwoGoals: teamTwoGoals,
             isChecked: false
         }
-        // const userGameBet = {
-        //     winner: winner,
-        //     teamOneGoals: game.teamOneGoals,
-        //     teamTwoGoals: game.teamTwoGoals,
-        //     isChecked: false
-        // }
 
         await handleBet(userGameBet, index)
 
