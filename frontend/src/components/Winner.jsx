@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 
-const Winner = ({currentUser}) => {
+const Winner = ({ currentUser }) => {
+    const [winner, setWinner] = useState('')
+
+    useEffect(() => {
+        if (currentUser.winner) {
+            setWinner(currentUser.winner)
+        }
+    }, [])
 
     const handleChange = (event) => {
-console.log(event)
-        // game[tagertName] = +event.target.value
+        const ans = event.target.value
+        setWinner(ans)
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        console.log(winner)
     }
 
     return (
         <div>
-            <h5>Enter your winner: </h5>
-            <input onChange={(e) => handleChange(e)} type="text" placeholder='World Cup Winner' value={currentUser?.winner ? currentUser?.winner : ''} />
+            <form onSubmit={(event) => handleSubmit(event)} >
+
+                <h5>Enter your winner: </h5>
+                <input onChange={(e) => handleChange(e)} type="text" placeholder='World Cup Winner' value={winner} />
+                <button type='submit' ></button>
+            </form>
         </div>
     )
 }
