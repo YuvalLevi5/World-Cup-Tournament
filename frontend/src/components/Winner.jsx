@@ -22,11 +22,11 @@ const Winner = ({ currentUser }) => {
 
     return (
         <div>
-            <form onSubmit={(event) => handleSubmit(event)} >
+            <form onSubmit={(e) => handleSubmit(e)} >
 
                 <h5>Enter your winner: </h5>
                 <input onChange={(e) => handleChange(e)} type="text" placeholder='World Cup Winner' value={winner} />
-                <button type='submit' ></button>
+                <button type='submit' className='btn' ></button>
             </form>
         </div>
     )
