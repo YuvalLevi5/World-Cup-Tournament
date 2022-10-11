@@ -3,30 +3,30 @@ import { useEffect } from 'react'
 
 const TopScorrer = () => {
 
-    const [winner, setWinner] = useState('')
+    const [goalScorer, setGoalScorer] = useState('')
 
     useEffect(() => {
-        if (currentUser.winner) {
-            setWinner(currentUser.winner)
+        if (currentUser.goalScorer) {
+            setGoalScorer(currentUser.goalScorer)
         }
     }, [])
 
     const handleChange = (event) => {
         const ans = event.target.value
-        setWinner(ans)
+        setGoalScorer(ans)
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(winner)
+        console.log(goalScorer)
     }
     
   return (
     <div>
     <form onSubmit={(e) => handleSubmit(e)} >
 
-        <h5>Enter your winner: </h5>
-        <input onChange={(e) => handleChange(e)} type="text" placeholder='World Cup Winner' value={winner} />
+        <h5>Enter your goalScorer: </h5>
+        <input onChange={(e) => handleChange(e)} type="text" placeholder='World Cup Winner' value={goalScorer} />
         <button type='submit' className='btn' ></button>
     </form>
 </div>
