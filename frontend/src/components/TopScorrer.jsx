@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 const TopScorrer = () => {
 
     const [goalScorer, setGoalScorer] = useState('')
+    const [goalScorer2, setGoalScorer2] = useState('')
 
     useEffect(() => {
         if (currentUser.goalScorer) {
