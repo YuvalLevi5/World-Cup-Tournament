@@ -49,6 +49,7 @@ const MyBets = () => {
   useEffect(() => {
     async function getGames() {
       const worldCupGames = await worldCupService.getGames()
+      console.log(worldCupGames)
       setGames(worldCupGames)
 
     }

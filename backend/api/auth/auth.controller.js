@@ -74,6 +74,18 @@ module.exports.getUsers = async (req, res, next) => {
     }
 };
 
+module.exports.getCurrUser = async (req, res, next) => {
+    try {
+        const username = req.params.username
+        const collection = await dbService.getCollection('users')
+        const usernameCheck = await collection.findOne({ username: username })
+        delete usernameCheck.password
+        res.json(usernameCheck)
+    } catch (err) {
+        console.log(err)
+    }
+};
+
 function toObjectId(id) {
     return new ObjectId(id)
 }

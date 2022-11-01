@@ -6,7 +6,8 @@ export const worldCupService = {
     register,
     updateUser,
     getGames,
-    getUsers
+    getUsers,
+    getCurrUser
 }
 
 
@@ -44,5 +45,10 @@ async function getGames()  {
 
 async function getUsers() {
     const data = await httpService.get('auth')
+    return data
+}
+
+async function getCurrUser(username) {
+    const data = await httpService.get(`auth/${username}`)
     return data
 }

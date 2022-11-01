@@ -13,7 +13,13 @@ const Personal = () => {
       if (!localStorage.getItem('worldcup-app-user')) {
         navigate("/login");
       } else {
-        setCurrentUser(await JSON.parse(localStorage.getItem('worldcup-app-user')))
+        let username = JSON.parse(localStorage.getItem('worldcup-app-user')).username
+        const currUser = await worldCupService.getCurrUser(username)
+        localStorage.setItem(
+          'worldcup-app-user',
+          JSON.stringify(currUser)
+      );
+        setCurrentUser(currUser)
       }
     }
     check()

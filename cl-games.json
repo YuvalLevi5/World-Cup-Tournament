@@ -1,0 +1,62 @@
+[
+    {
+        "date": "2022-11-01",
+        "hour": 22,
+        "name": "LIVvNAP",
+        "teamOne": "LIV",
+        "teamTwo": "NAP",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-01",
+        "hour": 22,
+        "name": "RFCvAJA",
+        "teamOne": "RFC",
+        "teamTwo": "AJA",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-01",
+        "hour": 22,
+        "name": "BAYvINT",
+        "teamOne": "BAY",
+        "teamTwo": "INT",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-01",
+        "hour": 22,
+        "name": "PLZvFCB",
+        "teamOne": "PLZ",
+        "teamTwo": "FCB",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-01",
+        "hour": 22,
+        "name": "SLIvSGE",
+        "teamOne": "SLI",
+        "teamTwo": "SGE",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    },
+    {
+        "date": "2022-11-01",
+        "hour": 22,
+        "name": "OLMvTOT",
+        "teamOne": "OLM",
+        "teamTwo": "TOT",
+        "winner": "",
+        "teamOneGoals": 0,
+        "teamTwoGoals": 0
+    }
+]
