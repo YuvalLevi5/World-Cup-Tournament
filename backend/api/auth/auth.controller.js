@@ -67,7 +67,6 @@ module.exports.getUsers = async (req, res, next) => {
     try {
         const collection = await dbService.getCollection('users')
         const users = await collection.find({}).toArray()
-        console.log(users)
         res.json(users)
     } catch (err) {
         console.log(err)

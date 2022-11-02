@@ -67,7 +67,7 @@ const Allbets = () => {
                 worldCupUsers[i].results[j].isChecked = true
                 if (games[j]?.winner === worldCupUsers[i]?.results[j]?.winner) {
                   addToScore += 2
-                  if (games[i].teamOneGoals === worldCupUsers[i]?.results[j].teamOneGoals && games[i].teamTwoGoals === worldCupUsers[i]?.results[j].teamTwoGoals) {
+                  if (games[i]?.teamOneGoals === worldCupUsers[i]?.results[j]?.teamOneGoals && games[i]?.teamTwoGoals === worldCupUsers[i]?.results[j]?.teamTwoGoals) {
                     addToScore += 1
                   }
                 }

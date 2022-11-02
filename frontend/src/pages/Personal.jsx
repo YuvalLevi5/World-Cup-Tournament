@@ -18,7 +18,7 @@ const Personal = () => {
         localStorage.setItem(
           'worldcup-app-user',
           JSON.stringify(currUser)
-      );
+      )
         setCurrentUser(currUser)
       }
     }

@@ -89,7 +89,7 @@ const MyBets = () => {
               return (
                 <div key={index}>
                   {game.date === currentDate && !game.winner && (
-                    <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} />
+                    <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} currentUser={currentUser} />
                   )}
                 </div>
               )

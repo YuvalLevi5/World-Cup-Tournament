@@ -3,7 +3,7 @@ import { BiFootball } from 'react-icons/bi'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Game = ({ game, index, handleBet }) => {
+const Game = ({ game, index, handleBet, currentUser }) => {
     const [currentHour, setScurrentHour] = useState(undefined)
     const [ableToBet, setAbleToBet] = useState(false)
     const [teamOneGoals, setTeamOneGoals] = useState('')
@@ -15,7 +15,7 @@ const Game = ({ game, index, handleBet }) => {
         pauseOnHover: true,
         draggable: true,
         theme: "dark",
-      }
+    }
 
     useEffect(() => {
         let yourDate = new Date()
@@ -86,6 +86,14 @@ const Game = ({ game, index, handleBet }) => {
                         <h4>Game already started</h4>
                     )
                 }
+                {
+                    currentUser?.results[index].winner && (
+                        <div>
+                            <h5>Your Current Guess:</h5>
+                            <p>{currentUser?.results[index].teamOneGoals}:{currentUser?.results[index].teamTwoGoals}</p>
+                        </div>
+                    )
+                }
                 <div className='bet-inputs'>
                     <div className='team-score-section'>
                         <label>{game.teamOne}</label>
@@ -93,13 +101,13 @@ const Game = ({ game, index, handleBet }) => {
                     </div>
                     <BiFootball />
                     <div className='team-score-section'>
-                        <input id='team-two-input' className='score-input' disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamTwoGoals' value={teamTwoGoals}  />
+                        <input id='team-two-input' className='score-input' disabled={ableToBet} onChange={(e) => handleChange(e, index)} type="number" name='teamTwoGoals' value={teamTwoGoals} />
                         <label>{game.teamTwo}</label>
                     </div>
                 </div>
                 {
                     ableToBet === false &&
-                    ( 
+                    (
                         <button type="submit" className='btn succes' disabled={ableToBet} >Set Bet</button>
                     )
                 }
