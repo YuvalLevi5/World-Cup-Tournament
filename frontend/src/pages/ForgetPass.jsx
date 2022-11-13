@@ -67,7 +67,7 @@ const ForgetPass = () => {
                             <div className='login-form'>
                                 <h3>Your Password Is:</h3>
                                 <h5>{userRealPassword}</h5>
-                                <button className="">
+                                <button className="btn register">
                                     <NavLink to="/login">Login</NavLink>
                                 </button>
                             </div>

@@ -78,7 +78,11 @@ const Login = () => {
                             onChange={(e) => handleChange(e)}
                         />
                         <button type="submit" className="btn">Login</button>
-                        <span className="btn register">
+                        <span className="btn register txt-center">
+                            <NavLink to="/forget-pass"> Reset Password</NavLink>
+                        </span>
+                        <hr/>
+                        <span className="btn register txt-center">
                             <NavLink to="/register"> Don't have an account ? Create One</NavLink>
                         </span>
                     </form>
