@@ -37,10 +37,10 @@ const MyBets = () => {
 
   useEffect(() => {
     async function check() {
-      if (!localStorage.getItem('worldcup-app-user')) {
+      if (!sessionStorage.getItem('worldcup-app-user')) {
         navigate("/login");
       } else {
-        setCurrentUser(await JSON.parse(localStorage.getItem('worldcup-app-user')))
+        setCurrentUser(await JSON.parse(sessionStorage.getItem('worldcup-app-user')))
       }
     }
     check()
@@ -64,7 +64,7 @@ const MyBets = () => {
         toast.error(data.msg, toastOptions);
       }
       if (data.status === true) {
-        localStorage.setItem(
+        sessionStorage.setItem(
           'worldcup-app-user',
           JSON.stringify(data.user)
         );

@@ -7,3 +7,20 @@
 @import './cmps/app-header';
 
 
+.score-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.8em auto;
+    padding: 1rem;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+
+}
+
+.admin-users {
+    display: flex;
+    flex-direction: column;
+}

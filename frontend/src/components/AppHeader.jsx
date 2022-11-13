@@ -14,10 +14,10 @@ const AppHeader = () => {
 
     useEffect(() => {
         async function check() {
-            if (!localStorage.getItem('worldcup-app-user')) {
+            if (!sessionStorage.getItem('worldcup-app-user')) {
                 navigate("/login");
             } else {
-                setCurrentUser(await JSON.parse(localStorage.getItem('worldcup-app-user')))
+                setCurrentUser(await JSON.parse(sessionStorage.getItem('worldcup-app-user')))
             }
         }
         check()
@@ -39,7 +39,10 @@ const AppHeader = () => {
                                 <li><NavLink to='/personal' onClick={toggleMenu}>My Bets History</NavLink></li>
                                 {
                                     currentUser?.isAdmin && (
-                                        <li><NavLink to='/admin' onClick={toggleMenu}>Admin</NavLink></li>
+                                        <>
+                                            <li><NavLink to='/admin-games' onClick={toggleMenu}>Admin - Games</NavLink></li>
+                                            <li><NavLink to='/admin-users' onClick={toggleMenu}>Admin - Users</NavLink></li>
+                                        </>
                                     )
                                 }
 

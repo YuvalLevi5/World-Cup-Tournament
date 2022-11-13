@@ -10,12 +10,12 @@ const Personal = () => {
   const navigate = useNavigate()
   useEffect(() => {
     async function check() {
-      if (!localStorage.getItem('worldcup-app-user')) {
+      if (!sessionStorage.getItem('worldcup-app-user')) {
         navigate("/login");
       } else {
-        let username = JSON.parse(localStorage.getItem('worldcup-app-user')).username
+        let username = JSON.parse(sessionStorage.getItem('worldcup-app-user')).username
         const currUser = await worldCupService.getCurrUser(username)
-        localStorage.setItem(
+        sessionStorage.setItem(
           'worldcup-app-user',
           JSON.stringify(currUser)
       )

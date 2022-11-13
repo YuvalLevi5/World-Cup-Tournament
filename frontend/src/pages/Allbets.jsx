@@ -13,7 +13,7 @@ const Allbets = () => {
 
   useEffect(() => {
     async function check() {
-      if (!localStorage.getItem('worldcup-app-user')) {
+      if (!sessionStorage.getItem('worldcup-app-user')) {
         navigate("/login");
       }
     }

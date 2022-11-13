@@ -17,7 +17,7 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if (localStorage.getItem('worldcup-app-user')) {
+        if (sessionStorage.getItem('worldcup-app-user')) {
             navigate("/");
         }
     }, [])
@@ -47,7 +47,7 @@ const Login = () => {
                 toast.error(data.msg, toastOptions);
             }
             if (data.status === true) {
-                localStorage.setItem(
+                sessionStorage.setItem(
                     'worldcup-app-user',
                     JSON.stringify(data.user)
                 );

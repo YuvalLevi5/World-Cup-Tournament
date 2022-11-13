@@ -50,7 +50,7 @@ const Register = () => {
         toast.error(data.msg, toastOptions);
       }
       if (data.status === true) {
-        localStorage.setItem(
+        sessionStorage.setItem(
           'worldcup-app-user',
           JSON.stringify(data.user)
         );

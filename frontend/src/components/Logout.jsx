@@ -5,7 +5,7 @@ import { BiLogOut } from 'react-icons/bi'
 const Logout = () => {
     const navigate = useNavigate()
     const handleClick = async () => {
-        localStorage.clear()
+        sessionStorage.clear()
         navigate('/login')
     }
     return (

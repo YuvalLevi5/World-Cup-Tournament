@@ -5,8 +5,6 @@ import { worldCupService } from '../services/world-cup-service'
 import AdminGame from '../components/AdminGame'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import one from '../assets/imgs/fans.svg';
-import two from '../assets/imgs/game-day.svg';
 
 const Admin = () => {
     const navigate = useNavigate()
@@ -24,37 +22,37 @@ const Admin = () => {
 
     useEffect(() => {
         async function check() {
-            if (!localStorage.getItem('worldcup-app-user')) {
+            if (!sessionStorage.getItem('worldcup-app-user')) {
                 navigate("/login");
             } else {
-                var currUser = await JSON.parse(localStorage.getItem('worldcup-app-user'))
+                var currUser = await JSON.parse(sessionStorage.getItem('worldcup-app-user'))
 
                 if (!currUser?.isAdmin) {
                     navigate("/");
                     return
                 }
-                setCurrentUser(await JSON.parse(localStorage.getItem('worldcup-app-user')))
+                setCurrentUser(await JSON.parse(sessionStorage.getItem('worldcup-app-user')))
             }
         }
         check()
     }, [])
 
     useEffect(() => {
-        async function getGames() {
-            const worldCupGames = await worldCupService.getGames()
-            setGames(worldCupGames)
-        }
         getGames()
     }, [])
 
+    async function getGames() {
+        const worldCupGames = await worldCupService.getGames()
+        setGames(worldCupGames)
+    }
+
     const handleScore = async (score) => {
         const data = await worldCupService.updateGame(score)
-        console.log(data)
         if (data.status === false) {
             toast.error(data.msg, toastOptions);
         }
         if (data.status === true) {
-            console.log('gi')
+            getGames()
             toast.success(`Your result is set to ${data.updateGame.teamOneGoals}:${data.updateGame.teamTwoGoals}, and the winner is ${data.updateGame.winner}`)
         }
     }
