@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { worldCupService } from '../services/world-cup-service'
+import { NavLink } from "react-router-dom";
 const ForgetPass = () => {
     const [currentStage, setCurrentStage] = useState(0)
     const [enteredUsername, setEnteredUsername] = useState(0)
     const [currentUser, setCurrentUser] = useState('')
     const [userAns, setUserAns] = useState('')
+    const [userRealPassword, setUserRealPassword] = useState('')
 
     const handleChange = (event) => {
         const value = event.target.value
@@ -27,32 +29,53 @@ const ForgetPass = () => {
 
     const checkAns = () => {
         if (userAns === currentUser.secretAns) {
-            console.log('HI')
+            setUserRealPassword(currentUser.password)
+            setCurrentStage(2)
         }
     }
 
     return (
         <>
-            {
-                currentStage === 0 && (
-                    <div>
-                        <h3>Please Enter Your Username: </h3>
-                        <input onChange={(e) => handleChange(e)} type="text" placeholder='username' />
-                        <button onClick={checkUser}>Click</button>
-                    </div>
-                )
-            }
+            <section className='form-container'>
 
-            {
-                currentStage === 1 && (
-                    <div>
-                        <h3>Please enter your grandmother name</h3>
-                        <input onChange={(e) => handleChangeAns(e)} type="text" placeholder='Grandmother Name' />
-                        <button onClick={checkAns}>Click</button>
-                    </div>
-                )
-            }
+                {
+                    currentStage === 0 && (
+                        <div className='bla'>
+                            <div className='login-form'>
+                                <h3>Please Enter Your Username: </h3>
+                                <input onChange={(e) => handleChange(e)} type="text" placeholder='username' />
+                                <button onClick={checkUser}>Click</button>
+                            </div>
+                        </div>
+                    )
+                }
 
+                {
+                    currentStage === 1 && (
+                        <div className='bla'>
+                            <div className='login-form'>
+                                <h3>Please enter your grandmother name</h3>
+                                <input onChange={(e) => handleChangeAns(e)} type="text" placeholder='Grandmother Name' />
+                                <button onClick={checkAns}>Click</button>
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    currentStage === 2 && (
+                        <div className='bla'>
+                            <div className='login-form'>
+                                <h3>Your Password Is:</h3>
+                                <h5>{userRealPassword}</h5>
+                                <button className="">
+                                    <NavLink to="/login">Login</NavLink>
+                                </button>
+                            </div>
+                        </div>
+                    )
+                }
+
+            </section>
         </>
     )
 }

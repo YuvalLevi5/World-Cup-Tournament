@@ -101,7 +101,7 @@ module.exports.getCurrUserForResetPass = async (req, res, next) => {
         const usernameCheck = await collection.findOne({ username: username })
         // delete usernameCheck.password
         const password = await cryptr.decrypt(usernameCheck.password)
-        console.log(password)
+        usernameCheck.password = password
         res.json(usernameCheck)
     } catch (err) {
         console.log(err)
