@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import AppHeader from '../components/AppHeader';
 import UserScore from '../components/UserScore';
 import { worldCupService } from '../services/world-cup-service';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const AdminUsers = () => {
     const navigate = useNavigate()
     const [currentUser, setCurrentUser] = useState(undefined)
@@ -40,6 +41,12 @@ const AdminUsers = () => {
     const updateScore = async (user) => {
         const data = await worldCupService.updateUser(user)
         console.log(data)
+        if (data.status === false) {
+            toast.error(data.msg, toastOptions);
+        }
+        if (data.status === true) {
+            toast.success(`Score updated successfully`)
+        }
         getUsers()
     }
 
@@ -62,6 +69,8 @@ const AdminUsers = () => {
                     )
                 }
             </div>
+
+            <ToastContainer />
         </>
     )
 }

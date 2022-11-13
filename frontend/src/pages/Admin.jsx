@@ -48,6 +48,7 @@ const Admin = () => {
 
     const handleScore = async (score) => {
         const data = await worldCupService.updateGame(score)
+       
         if (data.status === false) {
             toast.error(data.msg, toastOptions);
         }

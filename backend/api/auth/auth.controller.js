@@ -16,7 +16,11 @@ module.exports.register = async (req, res, next) => {
             username,
             password: hashedPassword,
             score: 0,
+            gsc: 0,
+            wcw: 0,
+            ts: 0,
             results: []
+
         })
         delete user.password
         const sendUser = await collection.findOne({ username: username })
