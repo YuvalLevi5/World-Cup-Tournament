@@ -1,9 +1,11 @@
-const bcrypt = require('bcrypt')
 const dbService = require('../../services/db.service')
-const ObjectId = require('mongodb').ObjectId;
+const ObjectId = require('mongodb').ObjectId
+const Cryptr = require('cryptr')
+const cryptr = new Cryptr('yuvallevi5')
+
 module.exports.register = async (req, res, next) => {
     try {
-        const { username, password } = req.body
+        const { username, password, secretAns } = req.body
         const collection = await dbService.getCollection('users')
 
         const usernameCheck = await collection.findOne({ username: username })
@@ -11,9 +13,10 @@ module.exports.register = async (req, res, next) => {
             return res.json({ msg: "Username already taken", status: false })
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10)
+        const hashedPassword = await cryptr.encrypt(password)
         const user = await collection.insertOne({
             username,
+            secretAns,
             password: hashedPassword,
             score: 0,
             gsc: 0,
@@ -36,15 +39,17 @@ module.exports.login = async (req, res, next) => {
         const collection = await dbService.getCollection('users')
         const user = await collection.findOne({ username: username })
         if (!user) {
-            return res.json({ msg: "Incorrect Username or Password", status: false });
+            return res.json({ msg: "Incorrect Username or Password", status: false })
         }
+        const passwordFromDb = await cryptr.decrypt(user.password)
 
-        const isPasswordValid = await bcrypt.compare(password, user.password);
+        const isPasswordValid = passwordFromDb === password ? true : false
+        console.log(isPasswordValid)
         if (!isPasswordValid) {
-            return res.json({ msg: "Incorrect Username or Password", status: false });
+            return res.json({ msg: "Incorrect Username or Password", status: false })
         }
-        delete user.password;
-        return res.json({ status: true, user });
+        delete user.password
+        return res.json({ status: true, user })
 
     } catch (err) {
         console.log(err)
@@ -61,11 +66,11 @@ module.exports.updateUser = async (req, res, next) => {
         }
 
         const afterUpdateUser = await collection.updateOne({ _id: updatedUser._id }, { $set: updatedUser })
-        return res.json({ status: true, user: updatedUser });
+        return res.json({ status: true, user: updatedUser })
     } catch (err) {
         console.log(err)
     }
-};
+}
 
 module.exports.getUsers = async (req, res, next) => {
     try {
@@ -75,7 +80,7 @@ module.exports.getUsers = async (req, res, next) => {
     } catch (err) {
         console.log(err)
     }
-};
+}
 
 module.exports.getCurrUser = async (req, res, next) => {
     try {
@@ -87,7 +92,21 @@ module.exports.getCurrUser = async (req, res, next) => {
     } catch (err) {
         console.log(err)
     }
-};
+}
+
+module.exports.getCurrUserForResetPass = async (req, res, next) => {
+    try {
+        const username = req.params.username
+        const collection = await dbService.getCollection('users')
+        const usernameCheck = await collection.findOne({ username: username })
+        // delete usernameCheck.password
+        const password = await cryptr.decrypt(usernameCheck.password)
+        console.log(password)
+        res.json(usernameCheck)
+    } catch (err) {
+        console.log(err)
+    }
+}
 
 function toObjectId(id) {
     return new ObjectId(id)

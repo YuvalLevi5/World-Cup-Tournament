@@ -11,6 +11,7 @@ const Register = () => {
     username: '',
     password: '',
     confirmPassword: '',
+    secretAns: ''
   })
 
   const toastOptions = {
@@ -44,8 +45,8 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     if (handleValidation()) {
-      const { password, username } = values
-      const data = await worldCupService.register(username, password)
+      const { password, username, secretAns } = values
+      const data = await worldCupService.register(username, password, secretAns)
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
@@ -67,6 +68,8 @@ const Register = () => {
           <input type="text" placeholder='Username' name='username' onChange={(event) => handleChange(event)} />
           <input type="password" placeholder='Password' name='password' onChange={(event) => handleChange(event)} />
           <input type="password" placeholder='Confirm Password' name='confirmPassword' onChange={(event) => handleChange(event)} />
+          <h5>Enter your grandmother name: </h5>
+          <input type="text" placeholder='Grandmother Name' name='secretAns' onChange={(event) => handleChange(event)} />
           <button className="btn" type='submit'>Create User</button>
           <span className='btn register'><NavLink to='/login'>Already have an account? Login</NavLink>  </span>
         </form>

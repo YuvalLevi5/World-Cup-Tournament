@@ -40,8 +40,8 @@ const AppHeader = () => {
                                 {
                                     currentUser?.isAdmin && (
                                         <>
-                                            <li><NavLink to='/admin-games' onClick={toggleMenu}>Admin - Games</NavLink></li>
-                                            <li><NavLink to='/admin-users' onClick={toggleMenu}>Admin - Users</NavLink></li>
+                                            <li><NavLink to='/admin-games' onClick={toggleMenu} className="admin-tab">Admin - Games</NavLink></li>
+                                            <li><NavLink to='/admin-users' onClick={toggleMenu} className="admin-tab">Admin - Users</NavLink></li>
                                         </>
                                     )
                                 }

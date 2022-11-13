@@ -33,7 +33,7 @@ const UserScore = ({ user, updateScore }) => {
                 <option value="wcw">WC Winner Score</option>
                 <option value="ts">Top Scorer Score</option>
             </select>
-            <button onClick={hangleAddScore} className='btn succes' >Add Score</button>
+            <button onClick={hangleAddScore} className='btn succes' >Add Points</button>
         </div>
     )
 }

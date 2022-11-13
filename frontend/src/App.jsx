@@ -7,11 +7,13 @@ import MyBets from './pages/MyBets';
 import Personal from './pages/Personal';
 import Admin from './pages/Admin';
 import AdminUsers from './pages/AdminUsers';
+import ForgetPass from './pages/ForgetPass';
 
 const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path='/forget-pass' element={<ForgetPass />} />
         <Route path='/admin-games' element={<Admin />} />
         <Route path='/admin-users' element={<AdminUsers />} />
         <Route path='/personal' element={<Personal />} />

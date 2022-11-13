@@ -56,7 +56,7 @@ const AdminGame = ({ game, index, handleScore }) => {
                         <label>{game.teamTwo}</label>
                     </div>
                 </div>
-                <button type="submit" className='btn succes'  >Set Bet</button>
+                <button type="submit" className='btn succes'  >Set Score</button>
             </form>
         </div>
     )
