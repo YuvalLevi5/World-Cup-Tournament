@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      registerType: 'autoUpdate',
       includeAssets: [faviconURL],
       manifest: {
         theme_color: '#ffffff',
