@@ -5,6 +5,8 @@ import { worldCupService } from '../services/world-cup-service'
 import AdminGame from '../components/AdminGame'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import one from '../assets/imgs/fans.svg';
+import two from '../assets/imgs/game-day.svg';
 
 const Admin = () => {
     const navigate = useNavigate()
@@ -18,7 +20,7 @@ const Admin = () => {
         pauseOnHover: true,
         draggable: true,
         theme: "dark",
-      }
+    }
 
     useEffect(() => {
         async function check() {
@@ -61,22 +63,26 @@ const Admin = () => {
         <>
             <AppHeader />
             <div className='my-bets-zone'>
-                <h1>AdminPage!</h1>
+                <div></div>
+                <div>
+                    <h1 className='txt-center'>Admin Page - GAMES</h1>
+                    {
+                        games && (
+                            games.map((game, index) => {
+                                return (
+                                    <div key={index}>
+                                        {!game.winner && (
+                                            <AdminGame game={JSON.parse(JSON.stringify(game))} index={index} handleScore={handleScore} />
+                                        )}
+                                    </div>
+                                )
+                            })
+                        )
 
-                {
-                    games && (
-                        games.map((game, index) => {
-                            return (
-                                <div key={index}>
-                                    {!game.winner && (
-                                        <AdminGame game={JSON.parse(JSON.stringify(game))} index={index} handleScore={handleScore} />
-                                    )}
-                                </div>
-                            )
-                        })
-                    )
+                    }
+                </div>
 
-                }
+                <div></div>
             </div>
 
             <ToastContainer />

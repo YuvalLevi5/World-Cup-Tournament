@@ -66,3 +66,57 @@
     }
 }
 
+.my-bets-zone-admin {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    height: 90vh;
+    text-align: center;
+
+
+
+    .game-zone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.8em auto;
+        padding: 1rem;
+        gap: 10px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+
+        h2 {
+            color: #7a122f;
+        }
+
+        .bet-form {
+            text-align: center;
+
+            h4 {
+                color: #7a122f;
+            }
+
+            .bet-inputs {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+
+                .team-score-section {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                }
+
+
+            }
+        }
+    }
+}
+
+.txt-center {
+    text-align: center;
+}
