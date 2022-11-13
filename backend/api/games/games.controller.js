@@ -25,7 +25,7 @@ module.exports.updateGame = async (req, res, next) => {
             teamTwoGoals: score.teamTwoGoals,
         }
         await collection.updateOne({ _id: updateGame._id }, { $set: updateGame })
-        return res.json(updateGame);
+        return res.json({ status: true, updateGame });
     } catch (err) {
         console.log(err)
     }

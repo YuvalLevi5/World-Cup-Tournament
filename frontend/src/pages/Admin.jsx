@@ -3,12 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import AppHeader from '../components/AppHeader';
 import { worldCupService } from '../services/world-cup-service'
 import AdminGame from '../components/AdminGame'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Admin = () => {
     const navigate = useNavigate()
 
     const [currentUser, setCurrentUser] = useState(undefined)
     const [games, setGames] = useState([])
+
+    const toastOptions = {
+        position: "top-right",
+        autoClose: 2500,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      }
 
     useEffect(() => {
         async function check() {
@@ -36,8 +46,15 @@ const Admin = () => {
     }, [])
 
     const handleScore = async (score) => {
-        console.log(score)
-        worldCupService.updateGame(score)
+        const data = await worldCupService.updateGame(score)
+        console.log(data)
+        if (data.status === false) {
+            toast.error(data.msg, toastOptions);
+        }
+        if (data.status === true) {
+            console.log('gi')
+            toast.success(`Your result is set to ${data.updateGame.teamOneGoals}:${data.updateGame.teamTwoGoals}, and the winner is ${data.updateGame.winner}`)
+        }
     }
 
     return (
@@ -62,7 +79,7 @@ const Admin = () => {
                 }
             </div>
 
-
+            <ToastContainer />
         </>
     )
 }

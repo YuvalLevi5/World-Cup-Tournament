@@ -45,7 +45,8 @@ async function getGames() {
 }
 
 async function updateGame(score) {
-    await httpService.put(`games/${score.gameName}`, score)
+    const data = await httpService.put(`games/${score.gameName}`, score)
+    return data
 }
 
 async function getUsers() {
