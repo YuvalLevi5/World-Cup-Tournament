@@ -87,7 +87,7 @@ const Game = ({ game, index, handleBet, currentUser }) => {
                     )
                 }
                 {
-                    currentUser?.results[index].winner && (
+                    currentUser?.results[index]?.winner && (
                         <div>
                             <h5>Your Current Guess:</h5>
                             <p>{currentUser?.results[index].teamOneGoals}:{currentUser?.results[index].teamTwoGoals}</p>

@@ -7,13 +7,14 @@ export const worldCupService = {
     updateUser,
     getGames,
     getUsers,
-    getCurrUser
+    getCurrUser,
+    updateGame
 }
 
 
 async function login(username, password) {
     try {
-        const data = await httpService.post('auth/login', {username, password})
+        const data = await httpService.post('auth/login', { username, password })
         return data
     } catch (err) {
         console.log(err)
@@ -22,7 +23,7 @@ async function login(username, password) {
 
 async function register(username, password) {
     try {
-        const data = await httpService.post('auth/register', {username, password})
+        const data = await httpService.post('auth/register', { username, password })
         return data
     } catch (err) {
         console.log(err)
@@ -38,9 +39,13 @@ async function updateUser(user) {
     }
 }
 
-async function getGames()  {
+async function getGames() {
     const data = await httpService.get('games')
     return data
+}
+
+async function updateGame(score) {
+    await httpService.put(`games/${score.gameName}`, score)
 }
 
 async function getUsers() {

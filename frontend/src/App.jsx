@@ -6,11 +6,13 @@ import Register from './pages/Register';
 import MyBets from './pages/MyBets';
 import AppHeader from './components/AppHeader';
 import Personal from './pages/Personal';
+import Admin from './pages/Admin';
 
 const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path='/admin' element={<Admin />} />
         <Route path='/personal' element={<Personal />} />
         <Route path='/mybets' element={<MyBets />} />
         <Route path='/register' element={<Register />} />
