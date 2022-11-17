@@ -10,7 +10,7 @@ const Login = () => {
 
     const toastOptions = {
         position: "bottom-right",
-        autoClose: 2501,
+        autoClose: 2500,
         pauseOnHover: true,
         draggable: true,
         theme: "dark",
