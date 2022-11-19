@@ -60,6 +60,8 @@ async function getCurrUser(username) {
     return data
 }
 async function getCurrUserForResetPass(username) {
+    console.log(username)
     const data = await httpService.get(`auth/reset/${username}`)
+    console.log(data)
     return data
 }

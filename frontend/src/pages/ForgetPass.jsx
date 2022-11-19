@@ -21,6 +21,7 @@ const ForgetPass = () => {
 
     const checkUser = async () => {
         const user = await worldCupService.getCurrUserForResetPass(enteredUsername)
+        console.log('hi')
         if (user) {
             setCurrentStage(1)
             setCurrentUser(user)
@@ -44,7 +45,7 @@ const ForgetPass = () => {
                             <div className='login-form'>
                                 <h3>Please Enter Your Username: </h3>
                                 <input onChange={(e) => handleChange(e)} type="text" placeholder='username' />
-                                <button onClick={checkUser}>Click</button>
+                                <button onClick={()=> checkUser()}>Click</button>
                             </div>
                         </div>
                     )
