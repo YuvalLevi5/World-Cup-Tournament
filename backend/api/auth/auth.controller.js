@@ -97,13 +97,14 @@ module.exports.getCurrUser = async (req, res, next) => {
 module.exports.getCurrUserForResetPass = async (req, res, next) => {
     try {
         const username = req.params.username
-        console.log(username)
         const collection = await dbService.getCollection('users')
         const usernameCheck = await collection.findOne({ username: username })
-        console.log(usernameCheck)
+        if (!usernameCheck) {
+            return res.json({ msg: "Incorrect Username", status: false })
+        }
         const password = await cryptr.decrypt(usernameCheck.password)
         usernameCheck.password = password
-        res.json(usernameCheck)
+        res.json({ status: true, user: usernameCheck})
     } catch (err) {
         console.log(err)
     }

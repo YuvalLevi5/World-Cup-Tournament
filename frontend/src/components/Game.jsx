@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Game = ({ game, index, handleBet, currentUser }) => {
     const [currentHour, setScurrentHour] = useState(undefined)
-    const [ableToBet, setAbleToBet] = useState(false)
+    const [ableToBet, setNotAbleToBet] = useState(false)
     const [teamOneGoals, setTeamOneGoals] = useState('')
     const [teamTwoGoals, setTeamTwoGoals] = useState('')
 
@@ -20,19 +20,22 @@ const Game = ({ game, index, handleBet, currentUser }) => {
     useEffect(() => {
         let yourDate = new Date()
         let currentHour = yourDate.getHours()
+        let currentMinute = yourDate.getMinutes()
         setScurrentHour(yourDate.getHours())
-        if (currentHour >= game.hour) {
-            setAbleToBet(true)
+
+        if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+            setNotAbleToBet(true)
         }
 
         const interval = setInterval(() => {
             let yourDate = new Date()
             let currentHour = yourDate.getHours()
+            let currentMinute = yourDate.getMinutes()
             setScurrentHour(yourDate.getHours())
-            if (currentHour >= game.hour) {
-                setAbleToBet(true)
+            if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+                setNotAbleToBet(true)
             }
-        }, 60000);
+        }, 10000);
 
         return () => clearInterval(interval);
 

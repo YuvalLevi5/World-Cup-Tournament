@@ -2,12 +2,23 @@ import React from 'react'
 import { useState } from 'react'
 import { worldCupService } from '../services/world-cup-service'
 import { NavLink } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ForgetPass = () => {
     const [currentStage, setCurrentStage] = useState(0)
     const [enteredUsername, setEnteredUsername] = useState(0)
     const [currentUser, setCurrentUser] = useState('')
     const [userAns, setUserAns] = useState('')
     const [userRealPassword, setUserRealPassword] = useState('')
+
+    const toastOptions = {
+        position: "top-right",
+        autoClose: 2500,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      }
 
     const handleChange = (event) => {
         const value = event.target.value
@@ -20,11 +31,14 @@ const ForgetPass = () => {
     }
 
     const checkUser = async () => {
-        const user = await worldCupService.getCurrUserForResetPass(enteredUsername)
-        console.log('hi')
-        if (user) {
+        const data = await worldCupService.getCurrUserForResetPass(enteredUsername)
+        if (data.status === false) {
+            toast.error(data.msg, toastOptions);
+        }
+        if (data.status === true) {
             setCurrentStage(1)
-            setCurrentUser(user)
+            setCurrentUser(data.user)
+
         }
     }
 
@@ -77,6 +91,8 @@ const ForgetPass = () => {
                 }
 
             </section>
+
+            <ToastContainer />
         </>
     )
 }
