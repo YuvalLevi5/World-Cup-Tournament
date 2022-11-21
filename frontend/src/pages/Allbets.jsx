@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { worldCupService } from '../services/world-cup-service'
 import { v4 as uuidv4 } from "uuid";
 import AppHeader from '../components/AppHeader';
+import Loading from '../components/Loading';
 
 const Allbets = () => {
   const navigate = useNavigate()
@@ -28,14 +29,14 @@ const Allbets = () => {
     getGames()
   }, [])
 
-  useEffect(() => {
-    async function getUsers() {
-      const worldCupUsers = await worldCupService.getUsers()
-      setUsers(worldCupUsers)
-    }
+  // useEffect(() => {
+  //   async function getUsers() {
+  //     const worldCupUsers = await worldCupService.getUsers()
+  //     setUsers(worldCupUsers)
+  //   }
 
-    getUsers()
-  }, [])
+  //   getUsers()
+  // }, [])
 
   useEffect(() => {
     let yourDate = new Date()
@@ -79,8 +80,10 @@ const Allbets = () => {
         await worldCupService.updateUser(worldCupUsers[i])
       }
       const updatedWorldCupUsers = await worldCupService.getUsers()
+      updatedWorldCupUsers.sort((a, b) => b.score - a.score)
       setUsers(updatedWorldCupUsers)
     }
+
 
     setScore()
   }, [games])
@@ -103,9 +106,26 @@ const Allbets = () => {
     return status
   }
 
+  function checkPos(idx) {
+    switch (idx) {
+      case 0:
+        return 'pos-1'
+      case 1:
+        return 'pos-2'
+      case 2:
+        return 'pos-3'
+      case 3:
+        return 'pos-4'
+      default:
+        return ''
+    }
+
+  }
+
   return (
     <>
       <AppHeader />
+
       <div className='all-bets-page'>
 
         <div className='table-container'>
@@ -123,7 +143,7 @@ const Allbets = () => {
                       return (
                         <th key={game.name}>
                           {game.name} <br />
-                          {game.teamOneGoals}:{game.teamTwoGoals}
+                          {game.teamOneGoals}:{game.teamTwoGoals} <br />
                         </th>
                       )
                     })
@@ -134,10 +154,10 @@ const Allbets = () => {
             <tbody>
               {
                 users && (
-                  users.map((user) => {
+                  users.map((user, idx) => {
                     return (
                       <tr key={user._id}>
-                        <td className='user-name-td' >{user.username}</td>
+                        <td className={'user-name-td ' + checkPos(idx)} >{user.username}</td>
                         <td className='bold-text' >{user.score}</td>
                         <td>{user?.gsc}</td>
                         <td>{user?.wcw}</td>
@@ -164,6 +184,7 @@ const Allbets = () => {
           </table>
         </div>
       </div>
+
     </>
   )
 }

@@ -23,6 +23,7 @@
             border-spacing: 0;
             width: 100%;
 
+
             thead {
                 position: sticky;
                 top: 0;
@@ -60,7 +61,21 @@
                 left: 0;
                 background-color: rgb(235, 220, 220);
 
+
             }
+            .pos-1 {
+                background-color: #fdd813;
+            }
+            .pos-2 {
+                background-color: #C0C0C0;
+            }
+            .pos-3 {
+                background-color: rgb(205, 127, 50);
+            }
+            .pos-4 {
+                background-color: rgb(170, 140, 117);
+            }
+
         }
     }
 }
