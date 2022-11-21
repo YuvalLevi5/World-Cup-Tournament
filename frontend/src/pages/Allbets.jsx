@@ -138,7 +138,7 @@ const Allbets = () => {
                     return (
                       <tr key={user._id}>
                         <td className='user-name-td' >{user.username}</td>
-                        <td>{user.score}</td>
+                        <td className='bold-text' >{user.score}</td>
                         <td>{user?.gsc}</td>
                         <td>{user?.wcw}</td>
                         <td>{user?.ts}</td>
@@ -166,63 +166,6 @@ const Allbets = () => {
       </div>
     </>
   )
-  // return (
-  //   <>
-  //     <AppHeader />
-  //     <div className='all-bets-page'>
-
-  //       <div className='table-container'>
-  //         <table className='users-table'>
-  //           <thead>
-  //             <tr>
-  //               <th>Users</th>
-  //               <th>Score</th>
-  //               {
-  //                 games && (
-  //                   games.map((game) => {
-  //                     return (
-  //                       <th key={game.name}>
-  //                         {game.name} <br />
-  //                         {game.teamOneGoals}:{game.teamTwoGoals}
-  //                       </th>
-  //                     )
-  //                   })
-  //                 )
-  //               }
-  //             </tr>
-  //           </thead>
-  //           <tbody>
-  //             {
-  //               users && (
-  //                 users.map((user) => {
-  //                   return (
-  //                     <tr key={user._id}>
-  //                       <td className='user-name-td' >{user.username}</td>
-  //                       <td>{user.score}</td>
-  //                       {
-  //                         user.results && (
-  //                           user.results.map((result, index) => {
-  //                             if (games[index]?.date !== currentDate || (games[index]?.date === currentDate && games[index]?.hour <= currentHour) || games[index].winner) {
-  //                               return (
-  //                                 <td key={uuidv4()} className={getClass(result?.teamOneGoals, result?.teamTwoGoals, result?.winner, games[index]?.teamOneGoals, games[index]?.teamTwoGoals, games[index]?.winner)}>
-  //                                   {result?.teamOneGoals}:{result?.teamTwoGoals}
-  //                                 </td>
-  //                               )
-  //                             }
-  //                           })
-  //                         )
-  //                       }
-  //                     </tr>
-  //                   )
-  //                 })
-  //               )
-  //             }
-  //           </tbody>
-  //         </table>
-  //       </div>
-  //     </div>
-  //   </>
-  // )
 }
 
 export default Allbets
