@@ -105,3 +105,23 @@
         opacity: .1;
     }
 }
+
+.games-zone {
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.games-zone::-webkit-scrollbar {
+    height: 8px;
+    width: 10px;
+}
+
+.games-zone::-webkit-scrollbar-track {
+    background: #091e4214;
+    border-radius: 10px;
+}
+
+.games-zone::-webkit-scrollbar-thumb {
+    background: #091e421f;
+    border-radius: 10px;
+}

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { worldCupService } from '../services/world-cup-service'
 import { v4 as uuidv4 } from "uuid";
 import AppHeader from '../components/AppHeader';
-import Loading from '../components/Loading';
 
 const Allbets = () => {
   const navigate = useNavigate()
@@ -57,9 +56,12 @@ const Allbets = () => {
 
   useEffect(() => {
     async function setScore() {
+      console.time()
+      var counter = 0
       const worldCupUsers = await worldCupService.getUsers()
       if (games.length === 0) return
       for (var i = 0; i < worldCupUsers.length; i++) {
+        let currUser = JSON.parse(JSON.stringify(worldCupUsers[i]))
         let addToScore = 0
         for (var j = 0; j < games.length; j++) {
           if (games[j].winner) {
@@ -76,12 +78,22 @@ const Allbets = () => {
             }
           }
         }
+
         worldCupUsers[i].score += addToScore
-        await worldCupService.updateUser(worldCupUsers[i])
+
+        let shouldCheck = JSON.stringify(currUser) === JSON.stringify(worldCupUsers[i]) ? false : true
+
+        if (shouldCheck) {
+          counter++
+          await worldCupService.updateUser(worldCupUsers[i])
+        }
+
       }
+      console.log(counter)
       const updatedWorldCupUsers = await worldCupService.getUsers()
       updatedWorldCupUsers.sort((a, b) => b.score - a.score)
       setUsers(updatedWorldCupUsers)
+      console.timeEnd()
     }
 
 

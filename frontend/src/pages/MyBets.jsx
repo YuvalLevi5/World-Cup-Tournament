@@ -82,12 +82,15 @@ const MyBets = () => {
 
       <div className='my-bets-zone'>
         <img src={two} alt="" />
-        <div>
+        <div className='games-zone'>
           {
             games.map((game, index) => {
               return (
                 <div key={index}>
-                  {game.date === currentDate && !game.winner && (
+                  {/* {game.date === currentDate && !game.winner && (
+                    <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} currentUser={currentUser} />
+                  )} */}
+                  {!game.winner && (
                     <Game game={JSON.parse(JSON.stringify(game))} index={index} handleBet={handleBet} currentUser={currentUser} />
                   )}
                 </div>

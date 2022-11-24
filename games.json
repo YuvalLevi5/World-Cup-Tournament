@@ -1,57 +1,57 @@
 [
     {
         "date": "2022-11-20",
-        "hour": 19,
+        "hour": 18,
         "name": "QATvECU",
         "teamOne": "QAT",
         "teamTwo": "ECU",
-        "winner": "",
+        "winner": "ECU",
         "teamOneGoals": 0,
-        "teamTwoGoals": 0
+        "teamTwoGoals": 2
     },
     {
         "date": "2022-11-21",
-        "hour": 16,
+        "hour": 15,
         "name": "ENGvIRN",
         "teamOne": "ENG",
         "teamTwo": "IRN",
-        "winner": "",
-        "teamOneGoals": 0,
-        "teamTwoGoals": 0
+        "winner": "ENG",
+        "teamOneGoals": 6,
+        "teamTwoGoals": 2
     },
     {
         "date": "2022-11-21",
-        "hour": 19,
+        "hour": 18,
         "name": "SENvNED",
         "teamOne": "SEN",
         "teamTwo": "NED",
-        "winner": "",
+        "winner": "NED",
         "teamOneGoals": 0,
-        "teamTwoGoals": 0
+        "teamTwoGoals": 2
     },
     {
         "date": "2022-11-21",
-        "hour": 22,
+        "hour": 21,
         "name": "USAvWAL",
         "teamOne": "USA",
         "teamTwo": "WAL",
-        "winner": "",
-        "teamOneGoals": 0,
-        "teamTwoGoals": 0
+        "winner": "drew",
+        "teamOneGoals": 1,
+        "teamTwoGoals": 1
     },
     {
         "date": "2022-11-22",
-        "hour": 13,
+        "hour": 12,
         "name": "ARGvKSA",
         "teamOne": "ARG",
         "teamTwo": "KSA",
-        "winner": "",
-        "teamOneGoals": 0,
-        "teamTwoGoals": 0
+        "winner": "KSA",
+        "teamOneGoals": 1,
+        "teamTwoGoals": 2
     },
     {
         "date": "2022-11-22",
-        "hour": 16,
+        "hour": 15,
         "name": "DENvTUN",
         "teamOne": "DEN",
         "teamTwo": "TUN",
@@ -61,7 +61,7 @@
     },
     {
         "date": "2022-11-22",
-        "hour": 19,
+        "hour": 18,
         "name": "MEXvPOL",
         "teamOne": "MEX",
         "teamTwo": "POL",
@@ -71,7 +71,7 @@
     },
     {
         "date": "2022-11-22",
-        "hour": 22,
+        "hour": 21,
         "name": "FRAvAUS",
         "teamOne": "FRA",
         "teamTwo": "AUS",
@@ -81,7 +81,7 @@
     },
     {
         "date": "2022-11-23",
-        "hour": 13,
+        "hour": 12,
         "name": "MARvCRO",
         "teamOne": "MAR",
         "teamTwo": "CRO",
@@ -91,7 +91,7 @@
     },
     {
         "date": "2022-11-23",
-        "hour": 16,
+        "hour": 15,
         "name": "GERvJPN",
         "teamOne": "GER",
         "teamTwo": "JPN",
@@ -101,7 +101,7 @@
     },
     {
         "date": "2022-11-23",
-        "hour": 19,
+        "hour": 18,
         "name": "ESPvCRC",
         "teamOne": "ESP",
         "teamTwo": "CRC",
@@ -111,7 +111,7 @@
     },
     {
         "date": "2022-11-23",
-        "hour": 22,
+        "hour": 21,
         "name": "BELvCAN",
         "teamOne": "BEL",
         "teamTwo": "CAN",
@@ -121,7 +121,7 @@
     },
     {
         "date": "2022-11-24",
-        "hour": 13,
+        "hour": 12,
         "name": "SUIvCMR",
         "teamOne": "SUI",
         "teamTwo": "CMR",
@@ -131,7 +131,7 @@
     },
     {
         "date": "2022-11-24",
-        "hour": 16,
+        "hour": 15,
         "name": "URUvKOR",
         "teamOne": "URU",
         "teamTwo": "KOR",
@@ -141,7 +141,7 @@
     },
     {
         "date": "2022-11-24",
-        "hour": 19,
+        "hour": 18,
         "name": "PORvGHA",
         "teamOne": "POR",
         "teamTwo": "GHA",
@@ -151,7 +151,7 @@
     },
     {
         "date": "2022-11-24",
-        "hour": 22,
+        "hour": 21,
         "name": "BRAvSRB",
         "teamOne": "BRA",
         "teamTwo": "SRB",
@@ -161,7 +161,7 @@
     },
     {
         "date": "2022-11-25",
-        "hour": 13,
+        "hour": 12,
         "name": "WALvIRN",
         "teamOne": "WAL",
         "teamTwo": "IRN",
@@ -171,7 +171,7 @@
     },
     {
         "date": "2022-11-25",
-        "hour": 16,
+        "hour": 15,
         "name": "QATvSEN",
         "teamOne": "QAT",
         "teamTwo": "SEN",
@@ -181,7 +181,7 @@
     },
     {
         "date": "2022-11-25",
-        "hour": 19,
+        "hour": 18,
         "name": "NEDvECU",
         "teamOne": "NED",
         "teamTwo": "ECU",
@@ -191,7 +191,7 @@
     },
     {
         "date": "2022-11-25",
-        "hour": 22,
+        "hour": 21,
         "name": "ENGvUSA",
         "teamOne": "ENG",
         "teamTwo": "USA",
@@ -201,7 +201,7 @@
     },
     {
         "date": "2022-11-26",
-        "hour": 13,
+        "hour": 12,
         "name": "TUNvAUS",
         "teamOne": "TUN",
         "teamTwo": "AUS",
@@ -211,7 +211,7 @@
     },
     {
         "date": "2022-11-26",
-        "hour": 16,
+        "hour": 15,
         "name": "POLvKSA",
         "teamOne": "POL",
         "teamTwo": "KSA",
@@ -221,7 +221,7 @@
     },
     {
         "date": "2022-11-26",
-        "hour": 19,
+        "hour": 18,
         "name": "FRAvDEN",
         "teamOne": "FRA",
         "teamTwo": "DEN",
@@ -231,7 +231,7 @@
     },
     {
         "date": "2022-11-26",
-        "hour": 22,
+        "hour": 21,
         "name": "ARGvMEX",
         "teamOne": "ARG",
         "teamTwo": "MEX",
@@ -241,7 +241,7 @@
     },
     {
         "date": "2022-11-27",
-        "hour": 13,
+        "hour": 12,
         "name": "JPNvCRC",
         "teamOne": "JPN",
         "teamTwo": "CRC",
@@ -251,7 +251,7 @@
     },
     {
         "date": "2022-11-27",
-        "hour": 16,
+        "hour": 15,
         "name": "BELvMAR",
         "teamOne": "BEL",
         "teamTwo": "MAR",
@@ -261,7 +261,7 @@
     },
     {
         "date": "2022-11-27",
-        "hour": 19,
+        "hour": 18,
         "name": "CROvCAN",
         "teamOne": "CRO",
         "teamTwo": "CAN",
@@ -271,7 +271,7 @@
     },
     {
         "date": "2022-11-27",
-        "hour": 22,
+        "hour": 21,
         "name": "ESPvGER",
         "teamOne": "ESP",
         "teamTwo": "GER",
@@ -281,7 +281,7 @@
     },
     {
         "date": "2022-11-28",
-        "hour": 13,
+        "hour": 12,
         "name": "CMRvSRB",
         "teamOne": "CMR",
         "teamTwo": "SRB",
@@ -291,7 +291,7 @@
     },
     {
         "date": "2022-11-28",
-        "hour": 16,
+        "hour": 15,
         "name": "KORvGHA",
         "teamOne": "KOR",
         "teamTwo": "GHA",
@@ -301,7 +301,7 @@
     },
     {
         "date": "2022-11-28",
-        "hour": 19,
+        "hour": 18,
         "name": "BRAvSUI",
         "teamOne": "BRA",
         "teamTwo": "SUI",
@@ -311,7 +311,7 @@
     },
     {
         "date": "2022-11-28",
-        "hour": 22,
+        "hour": 21,
         "name": "PORvURU",
         "teamOne": "POR",
         "teamTwo": "URU",
@@ -321,7 +321,7 @@
     },
     {
         "date": "2022-11-29",
-        "hour": 18,
+        "hour": 17,
         "name": "NEDvQAT",
         "teamOne": "NED",
         "teamTwo": "QAT",
@@ -331,7 +331,7 @@
     },
     {
         "date": "2022-11-29",
-        "hour": 18,
+        "hour": 17,
         "name": "ECUvSEN",
         "teamOne": "ECU",
         "teamTwo": "SEN",
@@ -341,7 +341,7 @@
     },
     {
         "date": "2022-11-29",
-        "hour": 22,
+        "hour": 21,
         "name": "IRNvUSA",
         "teamOne": "IRN",
         "teamTwo": "USA",
@@ -351,7 +351,7 @@
     },
     {
         "date": "2022-11-29",
-        "hour": 22,
+        "hour": 21,
         "name": "WALvENG",
         "teamOne": "WAL",
         "teamTwo": "ENG",
@@ -361,7 +361,7 @@
     },
     {
         "date": "2022-11-30",
-        "hour": 18,
+        "hour": 17,
         "name": "AUSvDEN",
         "teamOne": "AUS",
         "teamTwo": "DEN",
@@ -371,7 +371,7 @@
     },
     {
         "date": "2022-11-30",
-        "hour": 18,
+        "hour": 17,
         "name": "TUNvFRA",
         "teamOne": "TUN",
         "teamTwo": "FRA",
@@ -381,7 +381,7 @@
     },
     {
         "date": "2022-11-30",
-        "hour": 22,
+        "hour": 21,
         "name": "POLvARG",
         "teamOne": "POL",
         "teamTwo": "ARG",
@@ -391,7 +391,7 @@
     },
     {
         "date": "2022-11-30",
-        "hour": 22,
+        "hour": 21,
         "name": "KSAvMEX",
         "teamOne": "KSA",
         "teamTwo": "MEX",
@@ -401,7 +401,7 @@
     },
     {
         "date": "2022-12-01",
-        "hour": 18,
+        "hour": 17,
         "name": "CROvBEL",
         "teamOne": "COL",
         "teamTwo": "BEL",
@@ -411,7 +411,7 @@
     },
     {
         "date": "2022-12-01",
-        "hour": 18,
+        "hour": 17,
         "name": "CANvMAR",
         "teamOne": "CAN",
         "teamTwo": "MAR",
@@ -421,7 +421,7 @@
     },
     {
         "date": "2022-12-01",
-        "hour": 22,
+        "hour": 21,
         "name": "JPNvESP",
         "teamOne": "JPN",
         "teamTwo": "SPN",
@@ -431,7 +431,7 @@
     },
     {
         "date": "2022-12-01",
-        "hour": 22,
+        "hour": 21,
         "name": "CRCvGER",
         "teamOne": "CRC",
         "teamTwo": "GER",
@@ -441,7 +441,7 @@
     },
     {
         "date": "2022-12-02",
-        "hour": 18,
+        "hour": 17,
         "name": "GHAvURU",
         "teamOne": "GHA",
         "teamTwo": "URU",
@@ -451,7 +451,7 @@
     },
     {
         "date": "2022-12-02",
-        "hour": 18,
+        "hour": 17,
         "name": "KORvPOR",
         "teamOne": "KOR",
         "teamTwo": "POR",
@@ -461,7 +461,7 @@
     },
     {
         "date": "2022-12-02",
-        "hour": 22,
+        "hour": 21,
         "name": "SRBvSUI",
         "teamOne": "SRB",
         "teamTwo": "SUI",
@@ -471,7 +471,7 @@
     },
     {
         "date": "2022-12-02",
-        "hour": 22,
+        "hour": 21,
         "name": "CMRvBRA",
         "teamOne": "CMR",
         "teamTwo": "BRA",

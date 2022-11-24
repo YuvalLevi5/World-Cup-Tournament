@@ -22,19 +22,62 @@ const Game = ({ game, index, handleBet, currentUser }) => {
         let currentHour = yourDate.getHours()
         let currentMinute = yourDate.getMinutes()
         setScurrentHour(yourDate.getHours())
+        let currentMonth = yourDate.getMonth() + 1
+        let currentDay = yourDate.getDate()
+        let gameDateMonth = +game.date.substr(5, 2)
+        let gameDateDay = +game.date.substr(8, 2)
 
-        if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+        if ((currentMonth > gameDateMonth) ||
+            (currentMonth === gameDateMonth && currentDay > gameDateDay) ||
+            (currentHour === (game.hour - 1) && currentMinute >= 45 && currentDay === gameDateDay && currentMonth === gameDateMonth) ||
+            (currentHour >= game.hour && currentDay === gameDateDay && currentMonth === gameDateMonth)) {
             setNotAbleToBet(true)
         }
+
+        // if (currentMonth > gameDateMonth) {
+        //     setNotAbleToBet(true)
+        // }
+
+        // if (currentMonth === gameDateMonth && currentDay > gameDateDay) {
+        //     setNotAbleToBet(true)
+        // }
+
+        // if (currentHour === (game.hour - 1) && currentMinute >= 45 && currentDay === gameDateDay && currentMonth === gameDateMonth) {
+        //     setNotAbleToBet(true)
+        // }
+
+        // if (currentHour >= game.hour && currentDay === gameDateDay && currentMonth === gameDateMonth) {
+        //     setNotAbleToBet(true)
+        // }
+
+
+
+        //ORIGINAL
+        // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+        //     setNotAbleToBet(true)
+        // }
 
         const interval = setInterval(() => {
             let yourDate = new Date()
             let currentHour = yourDate.getHours()
             let currentMinute = yourDate.getMinutes()
+            let currentMonth = yourDate.getMonth() + 1
+            let currentDay = yourDate.getDate()
+            let gameDateMonth = game.date.substr(5, 2)
+            let gameDateDay = game.date.substr(8, 2)
             setScurrentHour(yourDate.getHours())
-            if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+
+            if ((currentMonth > gameDateMonth) ||
+                (currentMonth === gameDateMonth && currentDay > gameDateDay) ||
+                (currentHour === (game.hour - 1) && currentMinute >= 45 && currentDay === gameDateDay && currentMonth === gameDateMonth) ||
+                (currentHour >= game.hour && currentDay === gameDateDay && currentMonth === gameDateMonth)) {
                 setNotAbleToBet(true)
             }
+
+            //ORIGINAL
+            // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+            //     setNotAbleToBet(true)
+            // }
         }, 10000);
 
         return () => clearInterval(interval);
