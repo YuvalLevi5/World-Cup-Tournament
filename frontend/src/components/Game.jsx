@@ -29,7 +29,7 @@ const Game = ({ game, index, handleBet, currentUser }) => {
 
         if ((currentMonth > gameDateMonth) ||
             (currentMonth === gameDateMonth && currentDay > gameDateDay) ||
-            (currentHour === (game.hour - 1) && currentMinute >= 45 && currentDay === gameDateDay && currentMonth === gameDateMonth) ||
+            (currentHour === (game.hour - 1) && currentMinute >= 55 && currentDay === gameDateDay && currentMonth === gameDateMonth) ||
             (currentHour >= game.hour && currentDay === gameDateDay && currentMonth === gameDateMonth)) {
             setNotAbleToBet(true)
         }
@@ -42,7 +42,7 @@ const Game = ({ game, index, handleBet, currentUser }) => {
         //     setNotAbleToBet(true)
         // }
 
-        // if (currentHour === (game.hour - 1) && currentMinute >= 45 && currentDay === gameDateDay && currentMonth === gameDateMonth) {
+        // if (currentHour === (game.hour - 1) && currentMinute >= 55 && currentDay === gameDateDay && currentMonth === gameDateMonth) {
         //     setNotAbleToBet(true)
         // }
 
@@ -53,7 +53,7 @@ const Game = ({ game, index, handleBet, currentUser }) => {
 
 
         //ORIGINAL
-        // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+        // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 55)) {
         //     setNotAbleToBet(true)
         // }
 
@@ -69,13 +69,13 @@ const Game = ({ game, index, handleBet, currentUser }) => {
 
             if ((currentMonth > gameDateMonth) ||
                 (currentMonth === gameDateMonth && currentDay > gameDateDay) ||
-                (currentHour === (game.hour - 1) && currentMinute >= 45 && currentDay === gameDateDay && currentMonth === gameDateMonth) ||
+                (currentHour === (game.hour - 1) && currentMinute >= 55 && currentDay === gameDateDay && currentMonth === gameDateMonth) ||
                 (currentHour >= game.hour && currentDay === gameDateDay && currentMonth === gameDateMonth)) {
                 setNotAbleToBet(true)
             }
 
             //ORIGINAL
-            // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 45)) {
+            // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 55)) {
             //     setNotAbleToBet(true)
             // }
         }, 10000);
