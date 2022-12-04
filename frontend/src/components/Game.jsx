@@ -19,7 +19,10 @@ const Game = ({ game, index, handleBet, currentUser }) => {
 
     useEffect(() => {
         let yourDate = new Date()
-        let currentHour = yourDate.getHours()
+
+        let utc = yourDate.getTime() + (yourDate.getTimezoneOffset() * 60000);
+        let israelTime = new Date(utc + (3600000 * 2))
+        let currentHour = israelTime.getHours()
         let currentMinute = yourDate.getMinutes()
         setScurrentHour(yourDate.getHours())
         let currentMonth = yourDate.getMonth() + 1
@@ -34,32 +37,11 @@ const Game = ({ game, index, handleBet, currentUser }) => {
             setNotAbleToBet(true)
         }
 
-        // if (currentMonth > gameDateMonth) {
-        //     setNotAbleToBet(true)
-        // }
-
-        // if (currentMonth === gameDateMonth && currentDay > gameDateDay) {
-        //     setNotAbleToBet(true)
-        // }
-
-        // if (currentHour === (game.hour - 1) && currentMinute >= 55 && currentDay === gameDateDay && currentMonth === gameDateMonth) {
-        //     setNotAbleToBet(true)
-        // }
-
-        // if (currentHour >= game.hour && currentDay === gameDateDay && currentMonth === gameDateMonth) {
-        //     setNotAbleToBet(true)
-        // }
-
-
-
-        //ORIGINAL
-        // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 55)) {
-        //     setNotAbleToBet(true)
-        // }
-
         const interval = setInterval(() => {
             let yourDate = new Date()
-            let currentHour = yourDate.getHours()
+            let utc = yourDate.getTime() + (yourDate.getTimezoneOffset() * 60000);
+            let israelTime = new Date(utc + (3600000 * 2))
+            let currentHour = israelTime.getHours()
             let currentMinute = yourDate.getMinutes()
             let currentMonth = yourDate.getMonth() + 1
             let currentDay = yourDate.getDate()
@@ -74,10 +56,6 @@ const Game = ({ game, index, handleBet, currentUser }) => {
                 setNotAbleToBet(true)
             }
 
-            //ORIGINAL
-            // if (currentHour >= game.hour || (currentHour === (game.hour - 1) && currentMinute >= 55)) {
-            //     setNotAbleToBet(true)
-            // }
         }, 10000);
 
         return () => clearInterval(interval);
